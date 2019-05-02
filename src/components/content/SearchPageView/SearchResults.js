@@ -3,23 +3,17 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../../../withRoot';
 import Search from './SearchBar'
-import SearchResults from './SearchResults'
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    textAlign: 'center',
-    paddingBottom: theme.spacing.unit * 20,
-    marginLeft: '30px',
-    marginRight: '30px',
-    backgroundColor: '#E9E8DE',
   },
   grow: {
     flexGrow: 1,
   }
 });
 
-class SearchPage extends React.Component {
+class SearchResults extends React.Component {
   state = {
   };
 
@@ -27,15 +21,16 @@ class SearchPage extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Search/>
-        <SearchResults/>
+        <h1>
+        Search Results for '1984'
+        </h1>
       </div>
     );
   }
 }
 
-SearchPage.propTypes = {
+SearchResults.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(SearchPage));
+export default withRoot(withStyles(styles)(SearchResults));

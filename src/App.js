@@ -6,6 +6,7 @@ import { SearchPage } from './components/content/SearchPageView'
 import { AddOfferPage } from './components/content/AddBookOfferView'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import  Header  from './components/layout/Header'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 
@@ -27,6 +28,7 @@ class App extends React.Component {
   render() {
     const { classes } = this.props;
     return (
+    <MuiThemeProvider>
       <BrowserRouter>
       <Header/>
       <Switch>
@@ -35,11 +37,13 @@ class App extends React.Component {
         <Route exact path="/add-offer" component = {AddOfferPage}/>
       </Switch>
     </BrowserRouter>
+      </MuiThemeProvider>
+
     );
   }
 }
 
-SearchPage.propTypes = {
+App.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
