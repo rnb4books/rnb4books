@@ -18,17 +18,18 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { Link } from 'react-router-dom'
-const logo = require('../../../static/paella.jpg');
+import StarIcon from '@material-ui/icons/Star';
 
 
 const styles = theme => ({
   card: {
-    width: 300,
+    width: 200,
     margin: "10px",
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '140%', // 16:9
+    // backgroundSize: 'contain'
   },
   actions: {
     display: 'flex',
@@ -39,6 +40,10 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500],
   },
+  rating: {
+    display: 'flex',
+    alignItems: 'center',
+  }
 });
 
 class BookResultCard extends React.Component {
@@ -54,18 +59,23 @@ class BookResultCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    const logo = require('../../../static/'+this.props.logo);
+    const title = this.props.title;
+    const subtitle = this.props.subtitle;
+    const address = this.props.address;
+    const rating = this.props.rating;
     return (
       <Card className={classes.card}>
       <CardActionArea component={Link} to="/book-details">
-        <CardHeader
+       <CardHeader
           avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar}>
-              R
-            </Avatar>
+            <div className={classes.rating}>
+            <StarIcon/>
+            <span>{rating}</span>
+            </div>
           }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+          title="1984"
+          subheader="Geogre Orwell"
         />
         <CardMedia
           className={classes.media}
@@ -74,8 +84,7 @@ class BookResultCard extends React.Component {
         />
         <CardContent>
           <Typography component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+            {address}
           </Typography>
         </CardContent>
         </CardActionArea>

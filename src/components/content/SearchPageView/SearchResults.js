@@ -15,8 +15,15 @@ const styles = theme => ({
   results: {
     display: "flex",
     justifyContent: "center",
+    alignContent: "flex-start",
     flexWrap: "wrap",
-  }
+        '&::after': {
+          content: "",
+          flex: "auto",
+        }
+
+  },
+
 });
 
 class SearchResults extends React.Component {
@@ -31,10 +38,46 @@ class SearchResults extends React.Component {
         Search Results for '1984'
         </h1>
         <div className={classes.results}>
-          <BookResultCard/>
-          <BookResultCard/>
-          <BookResultCard/>
-          <BookResultCard/>
+          <BookResultCard
+            rating='4.8'
+            logo='1984-4.jpg'
+            title='1984'
+            subtitle='George Orwell'
+            address='Tokarskiego 2, Krakow'
+          />
+          <BookResultCard 
+            rating='4.4'
+            logo='1984-1.jpg'
+            title='1984'
+            subtitle='George Orwell'
+            address='Basztowa 14, Krakow'
+          />
+          <BookResultCard
+           rating='4.2'
+           logo='1984-3.jpg'
+           title='1984'
+           subtitle='George Orwell'
+           address='Budryka 11, Krakow'
+           />
+          <BookResultCard
+           rating='3.2'
+           logo='1984-2.jpg'
+           title='1984'
+           subtitle='George Orwell'
+           address='Nowa 3, Krakow'
+          />
+        </div>
+        <h1>
+          Dystopian reccomendations from your friends
+        </h1>
+        <div className={classes.results}>
+          <BookResultCard 
+            rating='3.3'
+            logo='1984-4.jpg'
+            title='1984'
+            subtitle='George Orwell'
+            address='Basztowa 14, Krakow'
+          />
         </div>
       </div>
     );

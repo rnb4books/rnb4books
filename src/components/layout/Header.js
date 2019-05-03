@@ -28,7 +28,12 @@ const styles = {
     justifyContent: "space-between",
   },
   button: {
-    marginLeft: "10px",
+    marginLeft: "10px",    
+    textTransform: "none",
+
+  },
+  appbar: {
+    backgroundColor: "#272c33",
   }
 };
 
@@ -52,7 +57,7 @@ class Header extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar className={classes.appbar}position="static">
           <Toolbar className={classes.toolbar}>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <HomeIcon />
