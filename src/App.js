@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import withRoot from './withRoot';
 import { SearchPage } from './components/content/SearchPageView'
 import { AddOfferPage } from './components/content/AddBookOfferView'
+import { BookDetails } from './components/content/BookDetailsView'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import  Header  from './components/layout/Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -35,6 +36,7 @@ class App extends React.Component {
         <Route exact path="/" component = {SearchPage}/>
         <Route exact path="/search" component = {SearchPage}/>
         <Route exact path="/add-offer" component = {AddOfferPage}/>
+        <Route exact path="/book-details" component = {BookDetails}/>
       </Switch>
     </BrowserRouter>
       </MuiThemeProvider>
