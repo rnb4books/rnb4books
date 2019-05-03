@@ -8,8 +8,11 @@ import { BookDetails } from './components/content/BookDetailsView'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import  Header  from './components/layout/Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
 
-
+library.add(faStroopwafel)
 
 const styles = theme => ({
   root: {
@@ -31,6 +34,7 @@ class App extends React.Component {
     return (
     <MuiThemeProvider>
       <BrowserRouter>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
       <Header/>
       <Switch>
         <Route exact path="/" component = {SearchPage}/>

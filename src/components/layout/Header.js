@@ -72,10 +72,10 @@ class Header extends React.Component {
             </div>
             <div>
               <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                <HomeIcon />
+                <i class="fas fa-inbox"></i>
               </IconButton>
               <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                <HomeIcon />
+                  <AccountCircle />
               </IconButton>
                 <IconButton
                   aria-owns={open ? 'menu-appbar' : undefined}
@@ -83,8 +83,8 @@ class Header extends React.Component {
                   onClick={this.handleMenu}
                   color="inherit"
                 >
-                  <AccountCircle />
-                </IconButton>
+                <i class="fas fa-chevron-down"></i>
+             </IconButton>
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorEl}

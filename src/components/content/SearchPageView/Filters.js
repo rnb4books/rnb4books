@@ -92,11 +92,12 @@ class Filters extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    const label = this.props.label;
+    const names = this.props.names;
     return (
       <div className={classes.root}>
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="select-multiple-chip">Genre</InputLabel>
+          <InputLabel htmlFor="select-multiple-chip">{label}</InputLabel>
           <Select
             multiple
             value={this.state.name}

@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab'
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import Filters from './Filters'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const styles = theme => ({
   root: {
@@ -22,8 +23,36 @@ const styles = theme => ({
   },
   icon: {
     marginRight: "10px",
+  },
+  filters: {
+    display: 'flex',
+    justifyContent: "center",
   }
 });
+
+const genres = [
+  'Fantasy',
+  'Science Fiction',
+  'Western',
+  'Romance',
+  'Thriller',
+  'Mystery',
+  'Dystopia',
+];
+
+const publishers = [
+  'Penguin',
+  'Hachette',
+  'Wiley',
+  'HarperCollins',
+];
+
+const condition = [
+  'excellent condition',
+  'good condition',
+  'average condition',
+  'bad condition',
+]
 
 class Search extends React.Component {
   state = {
@@ -40,7 +69,7 @@ class Search extends React.Component {
       <div className={classes.root}>
       <div className={classes.search}>
        <IconButton onClick={this.handleClick} className={classes.icon} color="inherit" aria-label="Menu">
-          <HomeIcon />
+          <i class="fas fa-filter"></i>
         </IconButton>
          <SearchBar
           onChange={() => console.log('onChange')}
@@ -52,7 +81,11 @@ class Search extends React.Component {
          />
          </div>
           {this.state.isOpened && (
-            <Filters/>
+            <div className={classes.filters}>
+              <Filters label={'Genre'} names={genres}/>
+              <Filters label={'Publisher'} names={publishers}/>
+              <Filters label={'Condition'} names={condition}/>
+            </div>
         )}
       </div>
     );
