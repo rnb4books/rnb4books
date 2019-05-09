@@ -12,6 +12,7 @@ import CheckIcon from '@material-ui/icons/CheckCircleOutlined';
 import StarIcon from '@material-ui/icons/Star';
 import Tooltip from '@material-ui/core/Tooltip';
 import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
 
 const styles = theme => ({
     root: {
@@ -114,7 +115,7 @@ const styles = theme => ({
         flex:1 
     }, 
     labels: {
-        paddingRight: '80px', 
+        paddingRight: '25%', 
         display: 'flex',
         flexDirection: 'column',
         justifyContent: "space-evenly"
@@ -195,6 +196,7 @@ const styles = theme => ({
                             >
                             <div className={classes.labels}>
                             <Typography color='secondary'variant='h6'> Address:</Typography>
+                            <Typography color='secondary'variant='h6'> Renter:</Typography>
                             <Typography color='secondary'variant='h6'> Availability:</Typography>
                             <Typography color='secondary'variant='h6'> Condition:</Typography>
                             <Typography color='secondary'variant='h6'> Max rent time:</Typography>
@@ -205,6 +207,7 @@ const styles = theme => ({
                             </div>
                             <div className={classes.values}>
                             <Typography color='secondary'variant='body2' > Tokarskiego 2, Kraków</Typography>
+                            <Link variant='body2' underline='always'> Madeline Kowalsky</Link>
                             <Typography color='secondary'variant='body2' > Available right now </Typography>
                             <Typography color='secondary'variant='body2' > excellent</Typography>
                             <Typography color='secondary'variant='body2' > 1 month</Typography>
