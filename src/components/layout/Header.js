@@ -11,6 +11,7 @@ import Menu from '@material-ui/core/Menu';
 import withRoot from '../../withRoot';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
+import {mainPallete} from './colors';
 
 const styles = {
   root: {
@@ -33,7 +34,7 @@ const styles = {
 
   },
   appbar: {
-    backgroundColor: "#272c33",
+    backgroundColor: mainPallete.registrationBlack
   }
 };
 
@@ -63,11 +64,11 @@ class Header extends React.Component {
               <HomeIcon />
             </IconButton>
             <div>
-            <Button component={Link} to="/search" className={classes.button} color="inherit">Search page
+            <Button component={Link} to="/search" className={classes.button} color="secondary">Search page
             </Button>
-            <Button className={classes.button} color="inherit">Manage lists
+            <Button className={classes.button} color="secondary">Manage lists
             </Button>
-            <Button component={Link} to="/add-offer" className={classes.button} color="inherit">Add book offer
+            <Button component={Link} to="/add-offer" className={classes.button} color="secondary">Add book offer
             </Button>
             </div>
             <div>

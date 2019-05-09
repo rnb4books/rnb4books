@@ -7,7 +7,6 @@ import Tab from '@material-ui/core/Tab'
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import Filters from './Filters'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const styles = theme => ({
   root: {

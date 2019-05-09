@@ -8,11 +8,11 @@ import { BookDetails } from './components/content/BookDetailsView'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import  Header  from './components/layout/Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+// import { library } from '@fontawesome/fontawesome-svg-core'
+// // import { FontAwesomeIcon } from '@fontawesome/react-fontawesome'
+// import { faStroopwafel } from '@fontawesome/free-solid-svg-icons'
 
-library.add(faStroopwafel)
+// library.add(faStroopwafel)
 
 const styles = theme => ({
   root: {
