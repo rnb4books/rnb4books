@@ -36,10 +36,10 @@ const styles = theme => ({
             <Card className={classes.card}>
                 <CardHeader
                     title="Description"
-                    titleTypographyProps={{variant:'h4', color: 'secondary'}}
+                    titleTypographyProps={{variant:'h4'}}
                     />
                     <CardContent>
-                    <Typography color='secondary'color='secondary' variant="body1">
+                    <Typography  variant="body1">
                         Book in a very good condition, bought from bookstore this year.
                     </Typography>
                     </CardContent>

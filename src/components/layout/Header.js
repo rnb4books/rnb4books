@@ -60,7 +60,7 @@ class Header extends React.Component {
       <div className={classes.root}>
         <AppBar className={classes.appbar}position="static">
           <Toolbar className={classes.toolbar}>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton className={classes.menuButton} color="primary" aria-label="Menu">
               <HomeIcon />
             </IconButton>
             <div>
@@ -72,37 +72,15 @@ class Header extends React.Component {
             </Button>
             </div>
             <div>
-              <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <IconButton className={classes.menuButton} color="primary" aria-label="Menu">
                 <i class="fas fa-inbox"></i>
               </IconButton>
-              <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <IconButton className={classes.menuButton} color="primary" aria-label="Menu">
                   <AccountCircle />
               </IconButton>
-                <IconButton
-                  aria-owns={open ? 'menu-appbar' : undefined}
-                  aria-haspopup="true"
-                  onClick={this.handleMenu}
-                  color="inherit"
-                >
-                <i class="fas fa-chevron-down"></i>
-             </IconButton>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  open={open}
-                  onClose={this.handleClose}
-                >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                </Menu>
+              <IconButton className={classes.menuButton} color="primary" aria-label="Menu">
+              <i class="fas fa-sign-out-alt"></i>
+              </IconButton>
               </div>
           </Toolbar>
         </AppBar>

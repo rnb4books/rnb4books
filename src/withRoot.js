@@ -10,27 +10,37 @@ import {mainPallete} from './components/layout/colors';
 const theme = createMuiTheme({
   palette: {
       primary: {
-        main: mainPallete.blue,
-        contrastText: mainPallete.whiteSmoke,
-        textPrimary: mainPallete.whiteSmoke, 
-        light: mainPallete.blueBerry
-        // light: purple[300],
-        // main: purple[500],
-        // dark: purple[700],
+        main: mainPallete.whiteSmoke,
+        contrastText: mainPallete.richBlack,
     },
+    text: {
+      primary: mainPallete.whiteSmoke,
+      secondary: mainPallete.whiteSmokeLight, 
+      hint: mainPallete.whiteSmokeLight, 
+    },
+    divider: mainPallete.whiteSmokeLight, 
     secondary: {
-      main: mainPallete.whiteSmoke,
-      contrastText: mainPallete.whiteSmoke,
+      main: mainPallete.whiteSmokeLight,
+      contrastText: mainPallete.richBlack,
      
     },
     background: {
       default: mainPallete.whiteSmoke
     },
+    action: {
+      active: mainPallete.whiteSmoke,
+      hover: mainPallete.eerieBlack, 
+      selected: mainPallete.whiteSmoke,
+      disabled: mainPallete.licorice
+    }
   },
   typography: {
     useNextVariants: true,
-    fontFamily: [ 'Rajdhani', 'sans-serif'],
-    textPrimary: mainPallete.whiteSmoke
+    fontFamily: [ 'Rajdhani', 'sans-serif'], 
+    fontSize: 15, 
+    body2: {
+      fontFamily: 'sans-serif'
+    }
   },
   overrides: {
     MuiButton: {
@@ -39,7 +49,12 @@ const theme = createMuiTheme({
         backgroundColor: mainPallete.blue,
         '&:hover': {
           backgroundColor: mainPallete.onyx
+        },
+        '&:disabled': {
+          backgroundColor: mainPallete.spanishGray,
+          color: mainPallete.ashGrey
         }
+
       }, 
       textSecondary: {
         color: mainPallete.whiteSmoke,
@@ -52,8 +67,13 @@ const theme = createMuiTheme({
       MuiLink: {
         root: {
           color: mainPallete.whiteSmoke,
+          '&:hover':{
+            color: mainPallete.blueberry
+            
+          }
         }, 
-    }
+    }, 
+   
   }
 });
 

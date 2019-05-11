@@ -88,7 +88,7 @@ const styles = theme => ({
         <Card className={classes.card}>
             <CardHeader
                 title="Book details:"
-                titleTypographyProps={{variant:'h5', color:'secondary'}}
+                titleTypographyProps={{variant:'h5'}}
                 />
                 <CardContent className={classes.content}>
                   <div className={classes.picture}>
@@ -98,19 +98,19 @@ const styles = theme => ({
                         title="Book cover"
                         />
                     <div className={classes.bookLink}>
-                      <Link underline='always' color='textPrimary' >See full book details</Link>
+                      <Link underline='always' >See full book details</Link>
                     </div>
                   </div>
                   <div className={classes.descRate}>
                     <div className={classes.rating}>
                       <div className={classes.ratingContent}>
-                        <StarIcon  color='secondary' className={classes.starIcon}/>
-                        <Typography color='secondary'component="h4" variant="h4">
+                        <StarIcon   color='primary' className={classes.starIcon}/>
+                        <Typography component="h4" variant="h4">
                             8.9
                         </Typography>
                       </div>
                     </div >
-                    <Typography color='secondary'className={classes.description}>
+                    <Typography className={classes.description}>
                       {"Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"}
                     </Typography>
                   </div>             

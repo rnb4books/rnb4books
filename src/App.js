@@ -40,7 +40,7 @@ class App extends React.Component {
         <Route exact path="/" component = {SearchPage}/>
         <Route exact path="/search" component = {SearchPage}/>
         <Route exact path="/add-offer" component = {AddOfferPage}/>
-        <Route exact path="/book-details" component = {BookDetails}/>
+        <Route exact path="/book-details/:id" component = {BookDetails}/>
       </Switch>
     </BrowserRouter>
       </MuiThemeProvider>

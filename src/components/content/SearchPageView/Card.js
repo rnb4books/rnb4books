@@ -58,7 +58,7 @@ class BookResultCard extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, id } = this.props;
     const logo = require('../../../static/'+this.props.logo);
     const title = this.props.title;
     const subtitle = this.props.subtitle;
@@ -66,7 +66,7 @@ class BookResultCard extends React.Component {
     const rating = this.props.rating;
     return (
       <Card className={classes.card}>
-      <CardActionArea component={Link} to="/book-details">
+      <CardActionArea component={Link} to={'/book-details/' + id}>
        <CardHeader
           avatar={
             <div className={classes.rating}>
@@ -95,6 +95,11 @@ class BookResultCard extends React.Component {
 
 BookResultCard.propTypes = {
   classes: PropTypes.object.isRequired,
+  id: PropTypes.string
 };
+
+BookResultCard.defaultProps = {
+  id: 'example1'
+}
 
 export default withStyles(styles)(BookResultCard);

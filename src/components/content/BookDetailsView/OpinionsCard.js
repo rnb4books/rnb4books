@@ -37,7 +37,7 @@ const styles = theme => ({
             <Card className={classes.card}>
                 <CardHeader
                     title="Opinions"
-                    titleTypographyProps={{variant:'h4', color:'secondary'}}
+                    titleTypographyProps={{variant:'h4'}}
                     />
                     <CardContent>
                         <OpinionCard/>

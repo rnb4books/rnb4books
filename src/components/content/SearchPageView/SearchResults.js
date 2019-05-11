@@ -44,6 +44,7 @@ class SearchResults extends React.Component {
             title='1984'
             subtitle='George Orwell'
             address='Tokarskiego 2, Krakow'
+            id='example1'
           />
           <BookResultCard 
             rating='4.4'
@@ -51,6 +52,7 @@ class SearchResults extends React.Component {
             title='1984'
             subtitle='George Orwell'
             address='Basztowa 14, Krakow'
+            id='example2'
           />
           <BookResultCard
            rating='4.2'

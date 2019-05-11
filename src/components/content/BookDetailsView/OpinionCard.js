@@ -65,25 +65,25 @@ const styles = theme => ({
                         <div className={classes.rating}>
                                 <div className={classes.ratingContent}>
                                 <div className={classes.stars}>
-                                    <StarIcon  color='secondary'/>    
-                                    <StarIcon  color='secondary'/>               
-                                    <StarIcon  color='secondary'/>               
-                                    <StarIcon  color='secondary'/>               
-                                    <StarIcon  color='secondary'/>               
-                                    <StarIcon  color='secondary'/>               
-                                    <StarIcon  color='secondary'/>
+                                    <StarIcon  color='primary'/>    
+                                    <StarIcon  color='primary'/>               
+                                    <StarIcon  color='primary'/>               
+                                    <StarIcon  color='primary'/>               
+                                    <StarIcon  color='primary'/>               
+                                    <StarIcon  color='primary'/>               
+                                    <StarIcon  color='primary'/>
                                     <StarIcon/>
                                     <StarIcon/>
                                     <StarIcon/>        
                                 </div>
-                                <Typography color='secondary'component="h6" variant="h6">
+                                <Typography component="h6" variant="h6">
                                     7
                                 </Typography>
                                 </div>
-                                <Typography color='secondary'>Book in a very good state, quick and pleasant exchange.</Typography>
+                                <Typography>Book in a very good state, quick and pleasant exchange.</Typography>
                             </div>
                             <div className={classes.date}>
-                        <Typography color='secondary'>06.03.2018</Typography>   
+                        <Typography >06.03.2018</Typography>   
                         <Link variant='body2' underline='always'>Kazio7878</Link>                   
                     </div>
                             </div>
