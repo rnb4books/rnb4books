@@ -4,15 +4,17 @@ import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../../../withRoot';
 import Search from './SearchBar'
 import SearchResults from './SearchResults'
+import {mainPallete } from '../../layout/colors';
+
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     textAlign: 'center',
     paddingBottom: theme.spacing.unit * 20,
-    marginLeft: '30px',
-    marginRight: '30px',
-    backgroundColor: '#E9E8DE',
+    marginLeft: '8%',
+    marginRight: '8%',
+    backgroundColor: mainPallete.smokeyBlackDark,
   },
   grow: {
     flexGrow: 1,

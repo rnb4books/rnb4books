@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../../../withRoot';
 import Search from './SearchBar'
 import BookResultCard from './Card'
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
@@ -23,6 +24,13 @@ const styles = theme => ({
         }
 
   },
+  h1: {
+    color: "white"
+  },
+  typo: {
+    paddingTop: '10px',
+    paddingBottom: '10px',
+  }
 
 });
 
@@ -34,9 +42,9 @@ class SearchResults extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <h1>
-        Search Results for '1984'
-        </h1>
+        <Typography className={classes.typo} component="h5" variant="h5">
+          Search Results for '1984'
+        </Typography>
         <div className={classes.results}>
           <BookResultCard
             rating='4.8'
@@ -69,9 +77,9 @@ class SearchResults extends React.Component {
            address='Nowa 3, Krakow'
           />
         </div>
-        <h1>
+        <Typography className={classes.typo} component="h5" variant="h5">
           Dystopian reccomendations from your friends
-        </h1>
+        </Typography>
         <div className={classes.results}>
           <BookResultCard 
             rating='3.3'

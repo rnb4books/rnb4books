@@ -19,12 +19,14 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { Link } from 'react-router-dom'
 import StarIcon from '@material-ui/icons/Star';
+import {mainPallete} from '../../layout/colors';
 
 
 const styles = theme => ({
   card: {
     width: 200,
     margin: "10px",
+    backgroundColor: mainPallete.eerieBlack,
   },
   media: {
     height: 0,
@@ -43,6 +45,7 @@ const styles = theme => ({
   rating: {
     display: 'flex',
     alignItems: 'center',
+    color: 'white',
   }
 });
 

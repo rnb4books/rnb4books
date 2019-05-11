@@ -22,6 +22,7 @@ const styles = theme => ({
   },
   icon: {
     marginRight: "10px",
+    color: "white",
   },
   filters: {
     display: 'flex',
