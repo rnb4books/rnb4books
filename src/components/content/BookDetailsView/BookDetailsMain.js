@@ -67,7 +67,7 @@ const styles = theme => ({
         margin: '10px',
     }, 
     picture: {
-        // margin: '10px',
+        margin: '10px',
         backgroundColor: mainPallete.eerieBlack, 
         display: 'flex',
         flex: 1,
@@ -82,7 +82,8 @@ const styles = theme => ({
         display: 'flex',
         padding: '15px',
         flex: 1, 
-        paddingBottom: theme.spacing.unit 
+        paddingBottom: theme.spacing.unit, 
+        justifyContent: 'space-around'
 
     },
     infoHeader: {
