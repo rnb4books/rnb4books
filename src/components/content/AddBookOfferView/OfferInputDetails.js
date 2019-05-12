@@ -23,7 +23,7 @@ const styles = theme => ({
     card: {
         display: 'flex',
         flex: 1,
-        maxHeight: '600px',
+        maxHeight: '800px',
         flexDirection: 'column',
         backgroundColor: mainPallete.licorice,
     },
@@ -194,31 +194,21 @@ class OfferInputDetails extends React.Component {
                                     container
                                     direction="row"
                                 >
-                                    <div className={classes.labels}>
-                                        <Typography variant='h6'> Address:</Typography>
-                                        <Typography variant='h6'> Condition:</Typography>
-                                        <Typography variant='h6'> Max rent time:</Typography>
-                                        <Typography variant='h6'> Publisher:</Typography>
-                                        <Typography variant='h6'> Language:</Typography>
-                                        <Typography variant='h6'> Book cover type:</Typography>
-                                        <Typography variant='h6'> Additional comments:</Typography>
-
-                                    </div>
                                     <div className={classes.values}>
-                                        <TextField placeholder={"Pickup address"}/>
-                                        <Slider
-                                            className={classes.slider}
-                                            value={this.state.condition}
-                                            min={0}
-                                            max={6}
-                                            step={1}
-                                            onChange={this.handleSlider}
-                                        />
-                                        <TextField placeholder={"Max rent duration"}/>
-                                        <TextField placeholder={"Publisher"}/>
-                                        <TextField placeholder={"Language"}/>
-                                        <TextField placeholder={"Hardcover, paperback..."}/>
-                                        <TextField placeholder={"Optional description"} multiline={true}
+                                        <Typography variant='h6' className={classes.labels}> Address:</Typography>
+                                        <TextField className={classes.values} placeholder={"Pickup address"}/>
+                                        <Typography variant='h6' className={classes.labels}> Condition:</Typography>
+                                        <TextField className={classes.values} placeholder={"Condition"}/>
+                                        <Typography variant='h6' className={classes.labels}> Max rent time:</Typography>
+                                        <TextField className={classes.values} placeholder={"Max rent duration"}/>
+                                        <Typography variant='h6' className={classes.labels}> Publisher:</Typography>
+                                        <TextField className={classes.values} placeholder={"Publisher"}/>
+                                        <Typography variant='h6' className={classes.labels}> Language:</Typography>
+                                        <TextField className={classes.values} placeholder={"Language"}/>
+                                        <Typography variant='h6' className={classes.labels}> Book cover type:</Typography>
+                                        <TextField className={classes.values} placeholder={"Hardcover, paperback..."}/>
+                                        <Typography variant='h6' className={classes.labels}> Additional comments:</Typography>
+                                        <TextField className={classes.values} placeholder={"Optional description"} multiline={true}
                                                    rows={2}
                                                    rowsMax={4}/>
                                     </div>
