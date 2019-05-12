@@ -10,7 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Select from '@material-ui/core/Select';
 import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
-import {mainPallete} from  '../../layout/colors';
+import {mainPallete } from '../../layout/colors';
 
 const styles = theme => ({
   root: {
@@ -22,7 +22,7 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     minWidth: 120,
     maxWidth: 300,
-
+    
   },
   chips: {
     display: 'flex',
@@ -39,12 +39,10 @@ const styles = theme => ({
   filter: {
     'display': 'flex',
     "justifyContent": "center",
-  }, 
-  menuItem: {
-    backgroundColor: mainPallete.richBlack, 
-
-  }, 
-
+  },
+  item: {
+    backgroundColor: mainPallete.smokeyBlackDark,
+  }
 });
 
 const ITEM_HEIGHT = 48;
@@ -124,7 +122,7 @@ class Filters extends React.Component {
             MenuProps={MenuProps}
           >
             {names.map(name => (
-              <MenuItem className={classes.menuItem} key={name} value={name} style={getStyles(name, this)}>
+              <MenuItem className={classes.item} key={name} value={name} style={getStyles(name, this)}>
                 {name}
               </MenuItem>
             ))}
