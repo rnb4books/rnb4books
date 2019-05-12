@@ -109,6 +109,14 @@ const styles = theme => ({
         justifyContent: "space-evenly",
         paddingRight: '5px'
     },
+    bookInfo: {
+        display: 'flex',
+        flex: 2,
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        marginTop: '10px',
+        marginBottom: '10px',
+    },
     bookmarkIcon: {
         fontSize: 80,
         color: mainPallete.whiteSmokeLight,
