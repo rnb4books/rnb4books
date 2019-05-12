@@ -10,6 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Select from '@material-ui/core/Select';
 import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
+import {mainPallete} from  '../../layout/colors';
 
 const styles = theme => ({
   root: {
@@ -21,13 +22,16 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     minWidth: 120,
     maxWidth: 300,
+
   },
   chips: {
     display: 'flex',
     flexWrap: 'wrap',
+
   },
   chip: {
     margin: theme.spacing.unit / 4,
+
   },
   noLabel: {
     marginTop: theme.spacing.unit * 3,
@@ -35,7 +39,12 @@ const styles = theme => ({
   filter: {
     'display': 'flex',
     "justifyContent": "center",
-  }
+  }, 
+  menuItem: {
+    backgroundColor: mainPallete.richBlack, 
+
+  }, 
+
 });
 
 const ITEM_HEIGHT = 48;
@@ -45,6 +54,8 @@ const MenuProps = {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
       width: 250,
+      backgroundColor: mainPallete.richBlack
+
     },
   },
 };
@@ -102,7 +113,7 @@ class Filters extends React.Component {
             multiple
             value={this.state.name}
             onChange={this.handleChange}
-            input={<Input id="select-multiple-chip" />}
+            input={<Input  id="select-multiple-chip" />}
             renderValue={selected => (
               <div className={classes.chips}>
                 {selected.map(value => (
@@ -113,7 +124,7 @@ class Filters extends React.Component {
             MenuProps={MenuProps}
           >
             {names.map(name => (
-              <MenuItem key={name} value={name} style={getStyles(name, this)}>
+              <MenuItem className={classes.menuItem} key={name} value={name} style={getStyles(name, this)}>
                 {name}
               </MenuItem>
             ))}
