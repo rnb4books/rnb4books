@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab'
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import Filters from './Filters'
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -27,6 +28,9 @@ const styles = theme => ({
   filters: {
     display: 'flex',
     justifyContent: "center",
+  },
+  button: {
+    marginLeft: '10px',
   }
 });
 
@@ -79,6 +83,7 @@ class Search extends React.Component {
 
           }}
          />
+        <Button className={classes.button}>Show map</Button>
          </div>
           {this.state.isOpened && (
             <div className={classes.filters}>
