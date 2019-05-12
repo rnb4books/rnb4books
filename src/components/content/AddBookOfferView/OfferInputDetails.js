@@ -11,7 +11,6 @@ import Button from '@material-ui/core/Button';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import Slider from '@material-ui/lab/Slider';
 
 
 const styles = theme => ({
@@ -59,7 +58,6 @@ const styles = theme => ({
     buttonSection: {
         backgroundColor: mainPallete.eerieBlack,
         marginTop: '10px',
-        marginLeft: '10px',
         marginRight: '10px',
         flexDirection: 'column',
         display: 'flex',
@@ -68,7 +66,20 @@ const styles = theme => ({
         paddingBottom: theme.spacing.unit,
         justifyContent: 'space-around'
     },
+    submitSection: {
+        backgroundColor: mainPallete.eerieBlack,
+        marginTop: '10px',
+        marginRight: '10px',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        display: 'flex',
+        padding: '15px',
+        flex: 1,
+        paddingBottom: theme.spacing.unit,
+        justifyContent: 'space-around'
+    },
     button: {
+        maxWidth: '250px',
         margin: '10px',
     },
     infoHeader: {
@@ -171,7 +182,6 @@ class OfferInputDetails extends React.Component {
                             </div>
                             <div className={classes.buttonSection}>
                                 <Button className={classes.button}>Add Picture</Button>
-                                <Button className={classes.button}>Create rent offer</Button>
                             </div>
                         </div>
                         <div className={classes.bookInfo}>
@@ -213,6 +223,9 @@ class OfferInputDetails extends React.Component {
                                                    rowsMax={4}/>
                                     </div>
                                 </Grid>
+                                <div className={classes.submitSection}>
+                                    <Button className={classes.button}>Create rent offer</Button>
+                                </div>
                             </div>
                         </div>
                     </CardContent>
