@@ -1,37 +1,74 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import withRoot from '../../../withRoot';
-
+import Grid from '@material-ui/core/Grid';
+import {mainPallete} from "../../layout/colors";
+import OfferInputDetails from "./OfferInputDetails";
 
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    textAlign: 'center',
-    paddingTop: theme.spacing.unit * 20,
-  },
-  grow: {
-    flexGrow: 1,
-  }
+    root: {
+        flexGrow: 1,
+        textAlign: 'left',
+        paddingTop: theme.spacing.unit * 3,
+        marginRight: '8%',
+        marginLeft: '8%',
+        backgroundColor: mainPallete.smokeyBlackDark,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    grow: {
+        flexGrow: 1,
+    },
+    main: {
+        display: 'flex',
+        flex: 2,
+        marginRight: '20px',
+        marginLeft: '20px'
+    },
 });
 
 class AddOfferPage extends React.Component {
-  state = {
-  };
+    state = {};
 
-  render() {
-    const { classes } = this.props;
-    return (
-      <div className={classes.root}>
-        Hello Add book offer
-      </div>
-    );
-  }
+    render() {
+        const {classes} = this.props;
+        const bookDetails = {
+            bookCoverImage: '1984-4.jpg',
+            info: {
+                title: '1984',
+                author: 'George Orwell',
+            }
+        };
+        return (
+            <div className={classes.root}>
+                <Grid
+                    container
+                    direction="row"
+                    justify="left"
+                    alignItems="top">
+                    <div className={classes.main}>
+                        <Grid
+                            container
+                            direction="column"
+                            justify="top"
+                            alignItems="left">
+                            <OfferInputDetails
+                                rateDisabled={bookDetails.rateDisabled}
+                                bookCoverImage={bookDetails.bookCoverImage}
+                                info={bookDetails.info}
+                            />
+                        </Grid>
+                    </div>
+                </Grid>
+            </div>
+        );
+    }
 }
 
 AddOfferPage.propTypes = {
-  classes: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
 };
 
 export default withRoot(withStyles(styles)(AddOfferPage));
