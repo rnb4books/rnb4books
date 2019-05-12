@@ -57,30 +57,26 @@ const styles = theme => ({
     },
     buttonSection: {
         backgroundColor: mainPallete.eerieBlack,
-        marginTop: '10px',
-        marginRight: '10px',
-        flexDirection: 'column',
+        margin: '10px',
         display: 'flex',
-        padding: '15px',
         flex: 1,
         paddingBottom: theme.spacing.unit,
-        justifyContent: 'space-around'
+        alignItems: 'center', 
+        justifyContent: 'center'
     },
     submitSection: {
         backgroundColor: mainPallete.eerieBlack,
-        marginTop: '10px',
-        marginRight: '10px',
+        margin: '10px',
         flexDirection: 'column',
         alignItems: 'flex-end',
         display: 'flex',
-        padding: '15px',
+        paddingBottom: '15px',
         flex: 1,
-        paddingBottom: theme.spacing.unit,
-        justifyContent: 'space-around'
     },
     button: {
-        maxWidth: '250px',
-        margin: '10px',
+        margin: '20px',
+        display: 'flex',
+        flex: 1, 
     },
     infoHeader: {
         display: 'flex',
@@ -94,8 +90,7 @@ const styles = theme => ({
         flexDirection: 'column',
         flex: 3,
         backgroundColor: mainPallete.eerieBlack,
-        paddingLeft: '15px',
-        paddingBottom: theme.spacing.unit * 3
+    
     },
     cardContent: {
         display: 'flex',
@@ -105,6 +100,7 @@ const styles = theme => ({
         padding: theme.spacing.unit * 2,
     },
     labels: {
+        paddingLeft: '10px',
         paddingRight: '25%',
         paddingTop: '10px',
         display: 'flex',
@@ -114,11 +110,13 @@ const styles = theme => ({
 
     },
     values: {
+        paddingLeft: '10px',
         display: 'flex',
         flex: 2,
         flexDirection: 'column',
         justifyContent: "space-evenly",
-        paddingRight: '5px'
+        paddingRight: '5px', 
+        width: '80%'
     },
     bookInfo: {
         display: 'flex',
@@ -173,10 +171,6 @@ class OfferInputDetails extends React.Component {
                                     className={classes.media}
                                     image={logo}
                                     title="Book cover">
-                                    <div>
-                                        <BookmarkIcon className={classes.bookmarkIcon}>
-                                        </BookmarkIcon>
-                                    </div>
                                 </CardMedia>
 
                             </div>
