@@ -12,8 +12,6 @@ const styles = theme => ({
         flexGrow: 1,
         textAlign: 'left',
         paddingTop: theme.spacing.unit * 3,
-        marginRight: '8%',
-        marginLeft: '8%',
         backgroundColor: mainPallete.smokeyBlackDark,
         justifyContent: 'center',
         alignItems: 'center'
@@ -25,7 +23,9 @@ const styles = theme => ({
         display: 'flex',
         flex: 2,
         marginRight: '20px',
-        marginLeft: '20px'
+        marginLeft: '20px',
+        marginRight: '8%',
+        marginLeft: '8%',
     },
 });
 

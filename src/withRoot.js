@@ -62,6 +62,9 @@ const theme = createMuiTheme({
         '&:hover': {
           backgroundColor: mainPallete.onyx
         }
+      }, 
+      label: {
+        textTransform: 'none',
       }
     }, 
       MuiLink: {

@@ -12,8 +12,6 @@ const styles = theme => ({
     flexGrow: 1,
     textAlign: 'center',
     paddingBottom: theme.spacing.unit * 20,
-    marginLeft: '8%',
-    marginRight: '8%',
     backgroundColor: mainPallete.smokeyBlackDark,
   },
   grow: {

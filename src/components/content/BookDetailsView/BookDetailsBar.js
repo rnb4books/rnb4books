@@ -18,52 +18,66 @@ const styles = theme => ({
       flex: 1,
       flexGrow: 1,
       alignItems: 'flex-start',
-      justifyContent: 'center'
+      justifyContent: 'center', 
+      marginTop: '20px',
 
     },
     card: {
       display: 'flex', 
       flexDirection: 'column', 
       backgroundColor: mainPallete.licorice,
-      marginRight: '20px',
+      paddingRight: '20px',
+      paddingLeft: '20px'
 
     }, 
     content: {
       display: 'flex', 
+      flex: 1,
       flexDirection: 'row', 
     }, 
-    media: {
-      height: 0,
-      paddingTop: '140%',
-      marginBottom: '15px',
-      display: 'flex', 
-  },
+  //   media: {
+  //     height: 0,
+  //     paddingTop: '140%',
+  //     marginBottom: '15px',
+  //     display: 'flex', 
+  // },
+  media: {
+    width: 333,
+    height: 236,
+    // flex: 5,
+    // display: 'flex',
+},
     rating: {
       marginBottom: '10px',
     },
     descRate: {
-      flex: 1, 
+      flex: 2, 
       display: 'flex',
       flexDirection: 'column',
       margin: '5px'
 
     },
     picture: {
-      flex: 2,
+      flex: 1,
       display: 'flex',
       flexDirection: 'column',
-      margin: '5px',
+      marginRight: '15px',
+      marginLeft: '10px',
+      paddingTop: '20px',
+      alignItems: 'center',
+      backgroundColor: mainPallete.eerieBlack, 
+
     },
     bookLink : {
+      flex: 1,
       display: 'flex',
       textAlign: 'center'
     },
     ratingContent: {
       flex:1,
-      justifyContent: 'space-evenly',
       display: 'flex',
       paddingRight: '250px',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       backgroundColor: mainPallete.eerieBlack, 
   },
   description: {

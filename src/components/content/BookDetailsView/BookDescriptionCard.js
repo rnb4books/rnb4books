@@ -11,14 +11,15 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
     root: {
       flexGrow: 1,
-      marginLeft: '10px'
 
     },
     grow: {
       flexGrow: 1,
     },
     card: {
-        backgroundColor: mainPallete.licorice
+        backgroundColor: mainPallete.licorice,
+        paddingRight: '20px',
+        paddingLeft: '20px'
 
     }
     

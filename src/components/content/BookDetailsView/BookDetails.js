@@ -15,8 +15,6 @@ const styles = theme => ({
     flexGrow: 1,
     textAlign: 'left',
     paddingTop: theme.spacing.unit * 3,
-    marginRight: '8%',
-    marginLeft: '8%',
     backgroundColor: mainPallete.smokeyBlackDark,
     justifyContent: 'center',
     alignItems: 'center'
@@ -33,7 +31,23 @@ const styles = theme => ({
   details: {
     display: 'flex', 
     flex: 1,
-  }
+    flexDirection: 'row'
+  }, 
+  content: {
+    marginLeft: '8%', 
+    marginRight: '8%'
+  }, 
+  mainInfo: {
+    display: 'flex', 
+    flex: 2,
+  }, 
+  picture: {
+    margin: '10px',
+    backgroundColor: mainPallete.eerieBlack, 
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+},
 });
 
 
@@ -85,32 +99,37 @@ class BookDetails extends React.Component {
     const bookDetails = this.props.match.params.id === 'example1' ? bookData.example1 : bookData.example2;
     return (
       <div className={classes.root}>
-      <Grid
+      {/* <Grid
+          className={classes.content}
           container
           direction="row"
           justify="left"
           alignItems="top"
-        >
+        > */}
         <div className={classes.main}>
          <Grid
+          className={classes.content}
           container
           direction="column"
           justify="top"
           alignItems="left"
         >        
         <BookDetailsMain
+             className={classes.mainInfo}
              rateDisabled={bookDetails.rateDisabled}
              bookCoverImage={bookDetails.bookCoverImage}
              info={bookDetails.info}          
          />
+
         <BookDescriptionCard/>
+        <BookDetailsBar className={classes.details}></BookDetailsBar>
+
         <OpinionsCard/>
         </Grid>
         </div>
 
-        <BookDetailsBar className={classes.details}></BookDetailsBar>
 
-      </Grid>
+      {/* </Grid> */}
       </div>
     );
   }

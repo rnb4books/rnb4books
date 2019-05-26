@@ -43,11 +43,10 @@ const styles = theme => ({
         backgroundColor: mainPallete.licorice,
     },
     media: {
-        height: 333,
-        width: 236,
+        minHeight: 399.6,
+        minWidth: 283.2,
         display: 'flex',
-        flex: 1,
-        margin: '30px', 
+        margin: '30px',
     },
     info: {
         display: 'flex',
@@ -72,6 +71,7 @@ const styles = theme => ({
         display: 'flex',
         flex: 1,
         flexDirection: 'row',
+        justifyContent: 'center'
     },
     rentButtonSection: {
         backgroundColor: mainPallete.eerieBlack, 
@@ -481,7 +481,7 @@ const styles = theme => ({
         </form>
         <div className={classes.rentFormButtons}>
             <Close color="secondary" onClick={this.onCloseClick} className={classes.closeRenting}/>
-            <Button onClick={this.onSendRequestClick} className={classes.submitRentButton}>SEND RENT REQUEST </Button>
+            <Button onClick={this.onSendRequestClick} className={classes.submitRentButton}>Send rent request </Button>
             </div>
         </Grid>
             </CardContent>
@@ -508,8 +508,8 @@ const styles = theme => ({
                         </div>
                         {!this.state.rateAreaOpened &&
                         <div className={classes.rentButtonSection}>
-                            <Button className={classes.rentButton} onClick={this.onRentClick}>RENT</Button>
-                            <Button disabled={this.props.rateDisabled} className={classes.rentButton} onClick={this.onRateClick}>RATE</Button>
+                            <Button className={classes.rentButton} onClick={this.onRentClick}>Rent</Button>
+                            <Button disabled={this.props.rateDisabled} className={classes.rentButton} onClick={this.onRateClick}>Rate</Button>
 
                         </div>
                         }
@@ -574,7 +574,7 @@ const styles = theme => ({
                                 InputLabelProps={{
                                     shrink: true,
                                 }}/>
-                            <Button className={classes.submitRateButton} onClick={this.onSubmitRating}>SUBMIT RATING</Button>
+                            <Button className={classes.submitRateButton} onClick={this.onSubmitRating}>Submit rating</Button>
 
                         </div>
                        

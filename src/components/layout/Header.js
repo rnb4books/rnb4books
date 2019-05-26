@@ -31,7 +31,6 @@ const styles = {
   button: {
     marginLeft: "10px",    
     textTransform: "none",
-
   },
   appbar: {
     backgroundColor: mainPallete.registrationBlack
@@ -64,7 +63,7 @@ class Header extends React.Component {
               <HomeIcon />
             </IconButton>
             <div>
-            <Button component={Link} to="/search" className={classes.button} color="secondary">Search page
+            <Button  component={Link} to="/search" className={classes.button} color="secondary">Search page
             </Button>
             <Button className={classes.button} color="secondary">Manage lists
             </Button>
