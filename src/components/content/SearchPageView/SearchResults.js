@@ -5,6 +5,7 @@ import withRoot from '../../../withRoot';
 import Search from './SearchBar'
 import BookResultCard from './Card'
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -15,8 +16,10 @@ const styles = theme => ({
   },
   results: {
     display: "flex",
-    justifyContent: "center",
-    alignContent: "flex-start",
+    justifyContent: "space-between",
+    alignContent: "center",
+    marginLeft: "30px",
+    marginRight: "30px",
     flexWrap: "wrap",
         '&::after': {
           content: "",
@@ -24,12 +27,22 @@ const styles = theme => ({
         }
 
   },
+  // frame : {
+  //   "marginLeft": "20px",
+  //   "marginRight": "20px",
+  // },
+  title : {
+    display: "flex",
+    justifyContent: "center"
+  },
   h1: {
     color: "white"
   },
   typo: {
     paddingTop: '10px',
     paddingBottom: '10px',
+    marginLeft: '10px',
+    marginRight: '10px'
   }
 
 });
@@ -42,9 +55,14 @@ class SearchResults extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
+        <div className={classes.title}>
         <Typography className={classes.typo} component="h5" variant="h5">
           Search Results for '1984'
         </Typography>
+        <Button className={classes.button}>Map view</Button>
+        </div>
+
+        <div className={classes.frame}>
         <div className={classes.results}>
           <BookResultCard
             rating='4.8'
@@ -76,9 +94,17 @@ class SearchResults extends React.Component {
            subtitle='George Orwell'
            address='Nowa 3, Krakow'
           />
-        </div>
+                    <BookResultCard
+           rating='3.2'
+           logo='1984-2.jpg'
+           title='1984'
+           subtitle='George Orwell'
+           address='Nowa 3, Krakow'
+          />
+         </div>
+         </div>
         <Typography className={classes.typo} component="h5" variant="h5">
-          Dystopian reccomendations from your friends
+          Dystopian recommendations from your friends
         </Typography>
         <div className={classes.results}>
           <BookResultCard 

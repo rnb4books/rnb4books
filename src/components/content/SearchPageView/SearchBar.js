@@ -7,8 +7,8 @@ import Tab from '@material-ui/core/Tab'
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import Filters from './Filters'
-import Button from '@material-ui/core/Button';
-
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -60,21 +60,26 @@ const condition = [
 
 class Search extends React.Component {
   state = {
-    isOpened: false,
+    isOpened: true,
+    checkedA: true,
   };
+
 
   handleClick = () => {
     this.setState({isOpened : !this.state.isOpened})
   }
 
+  handleChange = () => {
+    this.setState({checkedA: !this.state.checkedA})
+  }
+
   render() {
+
     const { classes } = this.props;
     return (
       <div className={classes.root}>
       <div className={classes.search}>
-       <IconButton onClick={this.handleClick} className={classes.icon} color="inherit" aria-label="Menu">
-          <i class="fas fa-filter"></i>
-        </IconButton>
+
          <SearchBar
           onChange={() => console.log('onChange')}
           onRequestSearch={() => console.log('onRequestSearch')}
@@ -83,14 +88,20 @@ class Search extends React.Component {
 
           }}
          />
-        <Button className={classes.button}>Show map</Button>
          </div>
           {this.state.isOpened && (
             <div className={classes.filters}>
               <Filters label={'Genre'} names={genres}/>
               <Filters label={'Publisher'} names={publishers}/>
               <Filters label={'Condition'} names={condition}/>
+              <FormControlLabel
+                control={
+                <Checkbox checked={this.state.checkedA} onChange={this.handleChange} />
+              }
+              label="Search near by"
+              />
             </div>
+
         )}
       </div>
     );

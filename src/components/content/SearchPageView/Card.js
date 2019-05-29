@@ -24,7 +24,7 @@ import {mainPallete} from '../../layout/colors';
 
 const styles = theme => ({
   card: {
-    width: 200,
+    width: 220,
     margin: "10px",
     backgroundColor: mainPallete.eerieBlack,
   },
