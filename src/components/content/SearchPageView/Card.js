@@ -46,6 +46,14 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     color: 'white',
+  },
+  localisation: {
+        display: 'flex',
+    alignItems: 'center',
+    color: 'white',
+  },
+  icon: {
+    marginRight: '10px',
   }
 });
 
@@ -77,7 +85,7 @@ class BookResultCard extends React.Component {
             <span>{rating}</span>
             </div>
           }
-          title="1984"
+          title={title}
           subheader="Geogre Orwell"
         />
         <CardMedia
@@ -86,9 +94,14 @@ class BookResultCard extends React.Component {
           title="Paella dish"
         />
         <CardContent>
+         <div className={classes.localisation}>
+         <div  className={classes.icon}>
+            <i class="fas fa-map-marker-alt"></i>
+            </div>
           <Typography component="p">
             {address}
           </Typography>
+          </div>
         </CardContent>
         </CardActionArea>
       </Card>

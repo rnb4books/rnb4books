@@ -62,7 +62,6 @@ class SearchResults extends React.Component {
         <Button className={classes.button}>Map view</Button>
         </div>
 
-        <div className={classes.frame}>
         <div className={classes.results}>
           <BookResultCard
             rating='4.8'
@@ -83,7 +82,7 @@ class SearchResults extends React.Component {
           <BookResultCard
            rating='4.2'
            logo='1984-3.jpg'
-           title='1984'
+           title='Long title'
            subtitle='George Orwell'
            address='Budryka 11, Krakow'
            />
@@ -101,7 +100,6 @@ class SearchResults extends React.Component {
            subtitle='George Orwell'
            address='Nowa 3, Krakow'
           />
-         </div>
          </div>
         <Typography className={classes.typo} component="h5" variant="h5">
           Dystopian recommendations from your friends

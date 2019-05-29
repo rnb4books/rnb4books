@@ -9,6 +9,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import Filters from './Filters'
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import Button from '@material-ui/core/Button';
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -88,6 +90,8 @@ class Search extends React.Component {
 
           }}
          />
+         <Button className={classes.button}>Search</Button>
+
          </div>
           {this.state.isOpened && (
             <div className={classes.filters}>
