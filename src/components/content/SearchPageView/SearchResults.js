@@ -5,6 +5,7 @@ import withRoot from '../../../withRoot';
 import BookResultCard from './Card'
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import {books} from  '../../../static/mockData';
 
 const styles = theme => ({
   root: {
@@ -84,13 +85,17 @@ class SearchResults extends React.Component {
           Top rent offers this week:
         </Typography>
         <div className={classes.results}>
-          <BookResultCard 
-            rating='3.3'
-            logo='1984-4.jpg'
-            title='1984'
-            subtitle='George Orwell'
-            address='Basztowa 14, Krakow'
-          />
+            {books.map(book => 
+                <BookResultCard
+                  rating={book.info.rating}
+                  logo={book.bookCoverImage}
+                  title={book.info.title}
+                  subtitle={book.info.author}
+                  address={book.info.address}
+                  id={book.id}
+              />
+              )
+            }
         </div>
       </div>
     );
