@@ -22,21 +22,29 @@ const styles = theme => ({
 
 class SearchPage extends React.Component {
   state = {
-    searchResults: [], 
+    searchResults: [],
     searchPhrase: ''
   };
 
-  search = (value) => {
+  search = (value, genre, publisher, condition) => {
     let searchRes = [];
     if(/\S/.test(value))
     {
       const searchPhrase = value.toLowerCase();
       const b = books;
       searchRes =  books.filter( book =>     {
-        return  book.info.title.toLowerCase().includes(searchPhrase) || 
-        book.info.author.toLowerCase().includes(searchPhrase) 
+          return (book.info.title.toLowerCase().includes(searchPhrase) ||
+              book.info.author.toLowerCase().includes(searchPhrase)
+          ) && (
+          //    process filters
+              (!genre || genre.includes(book.info.genre))
+              &&
+              (!publisher || publisher.includes(book.info.publisher))
+              &&
+              (!condition || condition.includes(book.info.condition))
+          )
       }
-          
+
         );
     }
 
@@ -51,7 +59,7 @@ class SearchPage extends React.Component {
     return (
       <div className={classes.root}>
         <Search
-          search={this.search}         
+          search={this.search}
           />
         <SearchResults
           searchResults={this.state.searchResults}

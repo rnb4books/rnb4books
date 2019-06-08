@@ -4,7 +4,8 @@ export const books = [
         rateDisabled: true,
         bookCoverImage: '1984-4.jpg',
         info: {
-            title: '1984', 
+            title: '1984',
+            genre: 'Dystopia',
             author: 'George Orwell',
             rating: '6.5',
             address: 'Basztowa 14, Kraków', 
@@ -24,7 +25,8 @@ export const books = [
         rateDisabled: false,
         bookCoverImage: '1984-1.jpg',
         info: {
-            title: '1984', 
+            title: '1984',
+            genre: 'Dystopia',
             author: 'George Orwell',
             rating: '8.6',
             address: 'Tokarskiego 2, Kraków', 
@@ -44,7 +46,8 @@ export const books = [
         rateDisabled: false,
         bookCoverImage: '1984-1.jpg',
         info: {
-            title: '1984', 
+            title: '1984',
+            genre: 'Dystopia',
             author: 'George Orwell',
             rating: '8.6',
             address: 'Siemowity  23, Kraków', 
@@ -64,7 +67,8 @@ export const books = [
         rateDisabled: false,
         bookCoverImage: '1984-2.jpg',
         info: {
-            title: '1984', 
+            title: '1984',
+            genre: 'Dystopia',
             author: 'George Orwell',
             rating: '8.6',
             address: 'Basztowa 16, Kraków', 
@@ -84,7 +88,8 @@ export const books = [
         rateDisabled: true,
         bookCoverImage: 'nophoto.jpg',
         info: {
-            title: 'Hamlet', 
+            title: 'Hamlet',
+            genre: 'Tragedy',
             author: 'William Shakespeare',
             rating: '9',
             address: 'Aleja 29 Listopada 90/15, Kraków', 
@@ -106,6 +111,7 @@ export const books = [
         bookCoverImage: 'nophoto.jpg',
         info: {
             title: 'The Chronicles of the Black Company: The Black Company', 
+            genre: 'Fantasy',
             author: 'Glen Cook',
             rating: '8',
             address: 'Kawiory 7, Kraków', 

@@ -71,7 +71,9 @@ class Filters extends React.Component {
   };
 
   handleChange = event => {
+    console.log("Filter change " + event.target.value);
     this.setState({ name: event.target.value });
+    this.props.search(event.target.value)
   };
 
   handleChangeMultiple = event => {
@@ -123,6 +125,7 @@ class Filters extends React.Component {
 
 Filters.propTypes = {
   classes: PropTypes.object.isRequired,
+  search: PropTypes.func
 };
 
 export default withStyles(styles, { withTheme: true })(Filters);

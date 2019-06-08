@@ -39,6 +39,7 @@ const genres = [
   'Western',
   'Romance',
   'Thriller',
+  'Tragedy',
   'Mystery',
   'Dystopia',
 ];
@@ -74,7 +75,7 @@ class Search extends React.Component {
   }
 
   setSearch = () => {
-      this.props.search(this.state.searchValue);
+      this.props.search(this.state.searchValue, this.state.genre, this.state.publisher, this.state.condition);
   }
 
   clearSearch = () => {
@@ -84,8 +85,23 @@ class Search extends React.Component {
 
   onSearchChange = (value) => {
     this.setState({
-      searchValue: value
+      searchValue: value,
     })
+  }
+
+  onGenreChange = (value) => {
+    console.log("set state to " + value)
+    this.setState({genre: value,})
+    console.log("state was updated to " + this.state.genre)
+    this.setSearch()
+  }
+  onPublisherChange = (value) => {
+    this.setState({publisher: value,})
+    this.setSearch()
+  }
+  onConditionChange = (value) => {
+    this.setState({condition: value,})
+    this.setSearch()
   }
 
   render() {
@@ -110,9 +126,12 @@ class Search extends React.Component {
          </div>
           {this.state.isOpened && (
             <div className={classes.filters}>
-              <Filters label={'Genre'} names={genres}/>
-              <Filters label={'Publisher'} names={publishers}/>
-              <Filters label={'Condition'} names={condition}/>
+              <Filters label={'Genre'} names={genres} value = {this.state.genre}
+                       search={this.onGenreChange}/>
+              <Filters label={'Publisher'} names={publishers} value = {this.state.publisher}
+                       search={this.onPublisherChange}/>
+              <Filters label={'Condition'} names={condition} value = {this.state.condition}
+                       search={this.onConditionChange}/>
               <FormControlLabel
                 control={
                 <Checkbox checked={this.state.checkedA} onChange={this.handleChange} />
