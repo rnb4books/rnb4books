@@ -13,14 +13,14 @@ const styles = theme => ({
     root: {
     
       flexGrow: 1,
-      marginLeft: '10px',
-      marginTop: '20px'  
+      marginTop: '20px',
     },
     grow: {
       flexGrow: 1,
     },
     card: {
         backgroundColor: mainPallete.licorice,
+        padding: '2%'
 
     }
     

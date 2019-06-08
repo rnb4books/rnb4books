@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import CardMedia from '@material-ui/core/CardMedia';
 import StarIcon from '@material-ui/icons/Star';
 import Link from '@material-ui/core/Link';
+import BookCover from '../../layout/BookCover';
 
 
 const styles = theme => ({
@@ -34,44 +35,24 @@ const styles = theme => ({
       display: 'flex', 
       flex: 1,
       flexDirection: 'row', 
+      margin: '1%'
+
     }, 
-  //   media: {
-  //     height: 0,
-  //     paddingTop: '140%',
-  //     marginBottom: '15px',
-  //     display: 'flex', 
-  // },
-  media: {
-    width: 333,
-    height: 236,
-    // flex: 5,
-    // display: 'flex',
-},
     rating: {
       marginBottom: '10px',
     },
     descRate: {
-      flex: 2, 
+      flex: 4, 
       display: 'flex',
       flexDirection: 'column',
-      margin: '5px'
-
-    },
-    picture: {
-      flex: 1,
-      display: 'flex',
-      flexDirection: 'column',
-      marginRight: '15px',
-      marginLeft: '10px',
-      paddingTop: '20px',
-      alignItems: 'center',
-      backgroundColor: mainPallete.eerieBlack, 
+      margin: '1%'
 
     },
     bookLink : {
       flex: 1,
       display: 'flex',
-      textAlign: 'center'
+      textAlign: 'center',
+      justifyContent: 'center'
     },
     ratingContent: {
       flex:1,
@@ -94,9 +75,8 @@ const styles = theme => ({
     };
   
     render() {
-      const { classes } = this.props;
-      const logo = require('../../../static/1984-2.jpg');
-
+      const { classes, book } = this.props;
+      const logo = require('../../../static/' + this.props.book.bookCoverImage);
       return (
         <div className={classes.root}>
         <Card className={classes.card}>
@@ -105,14 +85,13 @@ const styles = theme => ({
                 titleTypographyProps={{variant:'h5'}}
                 />
                 <CardContent className={classes.content}>
-                  <div className={classes.picture}>
-                    <CardMedia
-                        className={classes.media}
+                  <div>
+                      <BookCover
                         image={logo}
-                        title="Book cover"
-                        />
-                    <div className={classes.bookLink}>
-                      <Link underline='always' >See full book details</Link>
+                        showBookmark={false}
+                      />
+                      <div className={classes.bookLink}>
+                        <Link underline='always' >See full book details</Link>
                     </div>
                   </div>
                   <div className={classes.descRate}>
@@ -120,12 +99,12 @@ const styles = theme => ({
                       <div className={classes.ratingContent}>
                         <StarIcon   color='primary' className={classes.starIcon}/>
                         <Typography component="h4" variant="h4">
-                            8.9
+                            {book.info.rating}
                         </Typography>
                       </div>
                     </div >
                     <Typography className={classes.description}>
-                      {"Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"}
+                      {book.info.description}
                     </Typography>
                   </div>             
                 </CardContent>
@@ -137,6 +116,7 @@ const styles = theme => ({
   
   BokkDetailsBar.propTypes = {
     classes: PropTypes.object.isRequired,
+    book: PropTypes.object
   };
   
   export default withRoot(withStyles(styles)(BokkDetailsBar));

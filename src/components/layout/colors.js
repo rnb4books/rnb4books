@@ -12,6 +12,7 @@ export const mainPallete =   {
     smokeyBlackDark: '#0A0A0A',
     registrationBlack: '#010101',
     eerieBlack: '#1C1C1E',
+    lightGrey: '#28282B',
     licorice: '#131314', 
     neonGreen: '#0EF41A', 
     blueberry: '#4F71F7', 

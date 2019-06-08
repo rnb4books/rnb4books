@@ -22,8 +22,6 @@ const styles = theme => ({
     main: {
         display: 'flex',
         flex: 2,
-        marginRight: '20px',
-        marginLeft: '20px',
         marginRight: '8%',
         marginLeft: '8%',
     },

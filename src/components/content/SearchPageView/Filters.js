@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
-import ListItemText from '@material-ui/core/ListItemText';
 import Select from '@material-ui/core/Select';
-import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
-import {mainPallete } from '../../layout/colors';
+import { mainPallete } from '../../layout/colors';
 
 const styles = theme => ({
   root: {
@@ -22,7 +19,7 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     minWidth: 120,
     maxWidth: 300,
-    
+
   },
   chips: {
     display: 'flex',
@@ -58,15 +55,6 @@ const MenuProps = {
   },
 };
 
-const names = [
-  'Fantasy',
-  'Science Fiction',
-  'Western',
-  'Romance',
-  'Thriller',
-  'Mystery',
-  'Dystopia',
-];
 
 function getStyles(name, that) {
   return {
@@ -111,7 +99,7 @@ class Filters extends React.Component {
             multiple
             value={this.state.name}
             onChange={this.handleChange}
-            input={<Input  id="select-multiple-chip" />}
+            input={<Input id="select-multiple-chip" />}
             renderValue={selected => (
               <div className={classes.chips}>
                 {selected.map(value => (

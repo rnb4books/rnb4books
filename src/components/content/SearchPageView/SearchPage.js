@@ -5,7 +5,7 @@ import withRoot from '../../../withRoot';
 import Search from './SearchBar'
 import SearchResults from './SearchResults'
 import {mainPallete } from '../../layout/colors';
-
+import {books} from '../../../static/mockData';
 
 const styles = theme => ({
   root: {
@@ -19,16 +19,44 @@ const styles = theme => ({
   }
 });
 
+
 class SearchPage extends React.Component {
   state = {
+    searchResults: [], 
+    searchPhrase: ''
   };
+
+  search = (value) => {
+    let searchRes = [];
+    if(/\S/.test(value))
+    {
+      const searchPhrase = value.toLowerCase();
+      const b = books;
+      searchRes =  books.filter( book =>     {
+        return  book.info.title.toLowerCase().includes(searchPhrase) || 
+        book.info.author.toLowerCase().includes(searchPhrase) 
+      }
+          
+        );
+    }
+
+      this.setState({
+        searchResults: searchRes,
+        searchPhrase: value
+      })
+  }
 
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Search/>
-        <SearchResults/>
+        <Search
+          search={this.search}         
+          />
+        <SearchResults
+          searchResults={this.state.searchResults}
+          searchPhrase={this.state.searchPhrase}
+        />
       </div>
     );
   }

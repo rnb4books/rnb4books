@@ -58,7 +58,7 @@ const theme = createMuiTheme({
       }, 
       textSecondary: {
         color: mainPallete.whiteSmoke,
-        backgroundColor: mainPallete.richBlack, 
+        backgroundColor: 'inherit',
         '&:hover': {
           backgroundColor: mainPallete.onyx
         }
@@ -76,6 +76,16 @@ const theme = createMuiTheme({
           }
         }, 
     }, 
+    
+    MuiCardContent: {
+        root: {
+        padding: 0,
+        '&:last-child': {
+          paddingBottom: 0,
+        },
+      },
+    }
+   
    
   }
 });

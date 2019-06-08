@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../../../withRoot';
 import SearchBar from 'material-ui-search-bar'
-import Tab from '@material-ui/core/Tab'
-import IconButton from '@material-ui/core/IconButton';
-import HomeIcon from '@material-ui/icons/Home';
 import Filters from './Filters'
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -64,6 +61,7 @@ class Search extends React.Component {
   state = {
     isOpened: true,
     checkedA: true,
+    searchValue : '',
   };
 
 
@@ -75,6 +73,21 @@ class Search extends React.Component {
     this.setState({checkedA: !this.state.checkedA})
   }
 
+  setSearch = () => {
+      this.props.search(this.state.searchValue);
+  }
+
+  clearSearch = () => {
+    this.setState({searchValues : ''},
+    () => this.props.search(this.state.searchValue))
+  }
+
+  onSearchChange = (value) => {
+    this.setState({
+      searchValue: value
+    })
+  }
+
   render() {
 
     const { classes } = this.props;
@@ -83,8 +96,10 @@ class Search extends React.Component {
       <div className={classes.search}>
 
          <SearchBar
-          onChange={() => console.log('onChange')}
-          onRequestSearch={() => console.log('onRequestSearch')}
+           value = {this.state.searchValue}
+           onCancelSearch={() => this.clearSearch()} 
+           onChange={this.onSearchChange}
+           onRequestSearch={() => this.setSearch()}
           style={{
             width: 800
 
@@ -114,6 +129,7 @@ class Search extends React.Component {
 
 Search.propTypes = {
   classes: PropTypes.object.isRequired,
+  search: PropTypes.func
 };
 
 export default withRoot(withStyles(styles)(Search));

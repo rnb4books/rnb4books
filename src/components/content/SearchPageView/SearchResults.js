@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../../../withRoot';
-import Search from './SearchBar'
 import BookResultCard from './Card'
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -52,57 +51,37 @@ class SearchResults extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, searchResults, searchPhrase } = this.props;
     return (
       <div className={classes.root}>
-        <div className={classes.title}>
-        <Typography className={classes.typo} component="h5" variant="h5">
-          Search Results for '1984'
-        </Typography>
-        <Button className={classes.button}>Map view</Button>
-        </div>
-
+        {
+          searchResults && searchResults.length > 0 && 
+          <div className={classes.title}>
+            <Typography className={classes.typo} component="h5" variant="h5">
+                {`Search Results for ${searchPhrase}`} 
+            </Typography>
+          <Button className={classes.button}>Map view</Button>
+          </div>
+        }
+      
         <div className={classes.results}>
-          <BookResultCard
-            rating='4.8'
-            logo='1984-4.jpg'
-            title='1984'
-            subtitle='George Orwell'
-            address='Tokarskiego 2, Krakow'
-            id='example1'
-          />
-          <BookResultCard 
-            rating='4.4'
-            logo='1984-1.jpg'
-            title='1984'
-            subtitle='George Orwell'
-            address='Basztowa 14, Krakow'
-            id='example2'
-          />
-          <BookResultCard
-           rating='4.2'
-           logo='1984-3.jpg'
-           title='Long title'
-           subtitle='George Orwell'
-           address='Budryka 11, Krakow'
-           />
-          <BookResultCard
-           rating='3.2'
-           logo='1984-2.jpg'
-           title='1984'
-           subtitle='George Orwell'
-           address='Nowa 3, Krakow'
-          />
-                    <BookResultCard
-           rating='3.2'
-           logo='1984-2.jpg'
-           title='1984'
-           subtitle='George Orwell'
-           address='Nowa 3, Krakow'
-          />
+          {
+            searchResults && searchResults.length > 0 && 
+            searchResults.map(book => 
+              <BookResultCard
+                rating={book.info.rating}
+                logo={book.bookCoverImage}
+                title={book.info.title}
+                subtitle={book.info.author}
+                address={book.info.address}
+                id={book.id}
+            />
+            )
+          }
+        
          </div>
         <Typography className={classes.typo} component="h5" variant="h5">
-          Dystopian recommendations from your friends
+          Top rent offers this week:
         </Typography>
         <div className={classes.results}>
           <BookResultCard 
@@ -120,6 +99,8 @@ class SearchResults extends React.Component {
 
 SearchResults.propTypes = {
   classes: PropTypes.object.isRequired,
+  searchResults: PropTypes.array, 
+  searchPhrase: PropTypes.string
 };
 
 export default withRoot(withStyles(styles)(SearchResults));
