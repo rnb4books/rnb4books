@@ -90,18 +90,13 @@ class Search extends React.Component {
   }
 
   onGenreChange = (value) => {
-    console.log("set state to " + value)
-    this.setState({genre: value,})
-    console.log("state was updated to " + this.state.genre)
-    this.setSearch()
+    this.setState({genre: value,}, () => this.setSearch())
   }
   onPublisherChange = (value) => {
-    this.setState({publisher: value,})
-    this.setSearch()
+    this.setState({publisher: value,}, () => this.setSearch())
   }
   onConditionChange = (value) => {
-    this.setState({condition: value,})
-    this.setSearch()
+    this.setState({condition: value,}, () => this.setSearch())
   }
 
   render() {
