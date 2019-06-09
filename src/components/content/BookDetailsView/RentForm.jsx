@@ -24,7 +24,7 @@ const styles = theme => ({
         alignItems: 'flex-start',
         flex: 1, 
         backgroundColor: mainPallete.richBlack, 
-        margin: '2%', 
+        margin: '20px', 
       },
       textField: {
         width: '30%',
@@ -62,6 +62,7 @@ const styles = theme => ({
         marginBottom: '8%', 
       }, 
       rentFormButtons: {
+          margin: '10px',
           display: 'flex', 
           flex: 1,
           flexDirection: 'column',
@@ -72,7 +73,7 @@ const styles = theme => ({
       }, 
       submitRentButton: {
           display: 'flex', 
-          margin: '4%',
+          margin: '5px',
           marginLeft: '40%'
       }
 });

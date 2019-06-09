@@ -10,6 +10,9 @@ import {books} from  '../../../static/mockData';
 const styles = theme => ({
   root: {
     flexGrow: 1,
+    display: 'flex', 
+    flexDirection: 'column',
+    flex: 1
   },
   grow: {
     flexGrow: 1,
@@ -42,7 +45,7 @@ const styles = theme => ({
     paddingTop: '10px',
     paddingBottom: '10px',
     marginLeft: '10px',
-    marginRight: '10px'
+    marginRight: '10px',
   }
 
 });
@@ -52,7 +55,9 @@ class SearchResults extends React.Component {
   };
 
   render() {
-    const { classes, searchResults, searchPhrase } = this.props;
+    const { classes, searchResults, searchPhrase, filters } = this.props;
+    const filtersString = filters.join(' ');
+    const filterText = /\S/.test(filtersString) ? ' with filters: ' + filters.join(' ') : '';
     return (
       <div className={classes.root}>
         {
@@ -65,10 +70,12 @@ class SearchResults extends React.Component {
           </div>
         }
       
-        <div className={classes.results}>
-          {
-            searchResults && searchResults.length > 0 && 
-            searchResults.map(book => 
+       
+
+            {searchResults && searchResults.length > 0 ? 
+            <div className={classes.results}>
+            {
+              searchResults.map(book => 
               <BookResultCard
                 rating={book.info.rating}
                 logo={book.bookCoverImage}
@@ -77,10 +84,15 @@ class SearchResults extends React.Component {
                 address={book.info.address}
                 id={book.id}
             />
-            )
+            )}
+            </div>
+             : 
+                (searchPhrase && searchPhrase.length > 0 && 
+              <Typography className={classes.typo} component="h5" variant="h5">
+                {`No results for '${searchPhrase}'` + filterText}
+              </Typography>)    
           }
-        
-         </div>
+               
         <Typography className={classes.typo} component="h5" variant="h5">
           Top rent offers this week:
         </Typography>
@@ -105,7 +117,8 @@ class SearchResults extends React.Component {
 SearchResults.propTypes = {
   classes: PropTypes.object.isRequired,
   searchResults: PropTypes.array, 
-  searchPhrase: PropTypes.string
+  searchPhrase: PropTypes.string, 
+  filters: PropTypes.array
 };
 
 export default withRoot(withStyles(styles)(SearchResults));

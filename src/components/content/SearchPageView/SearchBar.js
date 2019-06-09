@@ -11,6 +11,8 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   root: {
     flexGrow: 1,
+    display: 'flex', 
+    flexDirection: 'column'
   },
   grow: {
     flexGrow: 1,
@@ -75,7 +77,8 @@ class Search extends React.Component {
   }
 
   setSearch = () => {
-      this.props.search(this.state.searchValue, this.state.genre, this.state.publisher, this.state.condition);
+      this.props.search(this.state.searchValue,
+         this.state.genre, this.state.publisher, this.state.condition);
   }
 
   clearSearch = () => {
@@ -116,7 +119,7 @@ class Search extends React.Component {
 
           }}
          />
-         <Button className={classes.button}>Search</Button>
+         <Button className={classes.button} onClick={this.setSearch}>Search</Button>
 
          </div>
           {this.state.isOpened && (

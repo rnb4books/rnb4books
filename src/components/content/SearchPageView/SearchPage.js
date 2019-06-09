@@ -13,6 +13,10 @@ const styles = theme => ({
     textAlign: 'center',
     paddingBottom: theme.spacing.unit * 20,
     backgroundColor: mainPallete.smokeyBlackDark,
+    display: 'flex', 
+    flexDirection: 'column', 
+    flex: 1, 
+    minHeight: '-webkit-fill-available'
   },
   grow: {
     flexGrow: 1,
@@ -23,11 +27,13 @@ const styles = theme => ({
 class SearchPage extends React.Component {
   state = {
     searchResults: [],
-    searchPhrase: ''
+    searchPhrase: '', 
+    filters: []
   };
 
   search = (value, genre, publisher, condition) => {
     let searchRes = [];
+    let filters = [genre, publisher, condition];
     if(/\S/.test(value))
     {
       const searchPhrase = value.toLowerCase();
@@ -50,7 +56,8 @@ class SearchPage extends React.Component {
 
       this.setState({
         searchResults: searchRes,
-        searchPhrase: value
+        searchPhrase: value, 
+        filters: filters
       })
   }
 
@@ -64,6 +71,7 @@ class SearchPage extends React.Component {
         <SearchResults
           searchResults={this.state.searchResults}
           searchPhrase={this.state.searchPhrase}
+          filters={this.state.filters}
         />
       </div>
     );

@@ -80,8 +80,8 @@ class RateArea extends React.Component {
 
     onCancelClick = () => {
         this.setState({
-            rating: this.props.initialInfo.rating,
-            comment: this.props.initialInfo.comment       
+            rating: this.props.initialRating.rating,
+            comment: this.props.initialRating.comment       
         });
     }
 
@@ -151,7 +151,7 @@ class RateArea extends React.Component {
 }
 
 RateArea.propTypes = {
-    initialInfo: PropTypes.object,
+    initialRating: PropTypes.object,
     info: PropTypes.object, 
     onSubmitRating: PropTypes.func, 
 };
