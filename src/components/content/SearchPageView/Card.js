@@ -18,6 +18,7 @@ const styles = theme => ({
     width: 220,
     margin: "10px",
     backgroundColor: mainPallete.eerieBlack,
+    marginRight: '50px'
   },
   media: {
     height: 0,

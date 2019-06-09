@@ -19,10 +19,10 @@ const styles = theme => ({
   },
   results: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     alignContent: "center",
-    marginLeft: "30px",
-    marginRight: "30px",
+    marginLeft: '40px',
+    marginRight: "40px",
     flexWrap: "wrap",
         '&::after': {
           content: "",
