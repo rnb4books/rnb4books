@@ -93,12 +93,21 @@ class Search extends React.Component {
   }
 
   onGenreChange = (value) => {
+    if (value && value.length === 0) {
+      value = undefined
+    }
     this.setState({genre: value,}, () => this.setSearch())
   }
   onPublisherChange = (value) => {
+    if (value && value.length === 0) {
+      value = undefined
+    }
     this.setState({publisher: value,}, () => this.setSearch())
   }
   onConditionChange = (value) => {
+    if (value && value.length === 0) {
+      value = undefined
+    }
     this.setState({condition: value,}, () => this.setSearch())
   }
 
