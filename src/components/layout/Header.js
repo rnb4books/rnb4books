@@ -57,7 +57,7 @@ class Header extends React.Component {
       <div className={classes.root}>
         <AppBar className={classes.appbar}position="static">
           <Toolbar className={classes.toolbar}>
-            <IconButton className={classes.menuButton} color="primary" aria-label="Menu">
+            <IconButton className={classes.menuButton} color="primary" aria-label="Menu"  component={Link} to="/search" >
               <HomeIcon />
             </IconButton>
             <div>
