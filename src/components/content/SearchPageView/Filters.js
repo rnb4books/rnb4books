@@ -62,6 +62,10 @@ function getStyles(name, that) {
       that.state.name.indexOf(name) === -1
         ? that.props.theme.typography.fontWeightRegular
         : that.props.theme.typography.fontWeightMedium,
+    color: 
+      that.state.name.indexOf(name) === -1
+      ? mainPallete.whiteSmokeLight
+      : mainPallete.richBlack
   };
 }
 
