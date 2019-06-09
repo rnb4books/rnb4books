@@ -12,6 +12,9 @@ import { mainPallete } from './components/layout/colors';
 // import { library } from '@fontawesome/fontawesome-svg-core'
 // // import { FontAwesomeIcon } from '@fontawesome/react-fontawesome'
 // import { faStroopwafel } from '@fontawesome/free-solid-svg-icons'
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
 // library.add(faStroopwafel)
 
@@ -20,6 +23,24 @@ const styles = theme => ({
     flexGrow: 1,
     textAlign: 'center',
     paddingTop: theme.spacing.unit * 20,
+    backgroundColor: mainPallete.smokeyBlackDark
+  },
+  appbar: {
+    padding: '5px',
+    top: 'auto',
+    bottom: 0,
+    backgroundColor: mainPallete.richBlack
+  },
+  typo: {
+    color: mainPallete.whiteSmokeLight, 
+    justifyContent: 'center', 
+    display: 'flex'
+  },
+  links: {
+    display: 'flex', 
+    paddingLeft: '5px',
+    paddingRight: '5px'
+
   },
   grow: {
     flexGrow: 1,
@@ -47,7 +68,7 @@ class App extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-    <MuiThemeProvider>
+    <MuiThemeProvider className={classes.root}>
       <BrowserRouter>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
       <Header/>
@@ -57,8 +78,23 @@ class App extends React.Component {
         <Route exact path="/add-offer" component = {AddOfferPage}/>
         <Route exact path="/book-details/:id" component = {BookDetails}/>
       </Switch>
+      <AppBar className={classes.appbar}>
+
+      <div>
+        <Typography variant="body2" className={classes.typo}>
+          App icon made by 
+          <Link className={classes.links} href="https://www.freepik.com/?__hstc=57440181.2fb78b390376de33fad97e07ad108db7.1559064923555.1559064923555.1560079983740.2&__hssc=57440181.4.1560079983740&__hsfp=2991554285" title="Freepik">
+            Freepik </Link> from 
+            <Link className={classes.links}
+              href="https://www.flaticon.com/"
+              title="Flaticon">www.flaticon.com</Link> 
+           is licensed by <Link className={classes.links} href="http://creativecommons.org/licenses/by/3.0/" 			    
+        title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</Link>
+        </Typography>
+        </div>
+      </AppBar>
     </BrowserRouter>
-      </MuiThemeProvider>
+    </MuiThemeProvider>
 
     );
   }

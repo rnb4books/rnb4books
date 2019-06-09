@@ -6,6 +6,7 @@ import Search from './SearchBar'
 import SearchResults from './SearchResults'
 import {mainPallete } from '../../layout/colors';
 import {books} from '../../../static/mockData';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
@@ -20,6 +21,10 @@ const styles = theme => ({
   },
   grow: {
     flexGrow: 1,
+  }, 
+  welcomeMsg: {
+    margin: '10px', 
+    padding: '10px'
   }
 });
 
@@ -65,6 +70,11 @@ class SearchPage extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
+        <Typography 
+          className={classes.welcomeMsg} 
+          variant="h5" component="h5">
+             Welcome to RNB4BOOKS - site where you can rent books from people near youc location!
+        </Typography>
         <Search
           search={this.search}
           />
