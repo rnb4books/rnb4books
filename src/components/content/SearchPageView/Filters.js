@@ -38,7 +38,8 @@ const styles = theme => ({
     "justifyContent": "center",
   },
   item: {
-    backgroundColor: mainPallete.smokeyBlackDark,
+    backgroundColor: 'white',
+    color : 'black'
   }
 });
 
