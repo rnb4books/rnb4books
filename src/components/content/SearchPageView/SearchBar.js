@@ -54,10 +54,10 @@ const publishers = [
 ];
 
 const condition = [
-  'excellent condition',
-  'good condition',
-  'average condition',
-  'bad condition',
+  'Excellent',
+  'Good',
+  'Average',
+  'Bad',
 ]
 
 class Search extends React.Component {
