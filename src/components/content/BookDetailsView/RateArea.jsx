@@ -85,6 +85,17 @@ class RateArea extends React.Component {
         });
     }
 
+    calculateRating = (rating) => {
+        let newRating = parseFloat(rating) + parseFloat(this.state.calcRating);
+        let dividedRating = newRating / 2;
+        dividedRating = dividedRating.toFixed(2);
+        this.setState({calcRating : dividedRating})
+    }
+
+    componentDidMount(){
+        this.setState({calcRating : this.props.info.rating})
+    }
+
     render() {
         const { classes, info, onSubmitRating } = this.props;
         return (
@@ -92,7 +103,7 @@ class RateArea extends React.Component {
                 <div className={classes.avgRating}>
                     <StarIcon  color='primary' className={classes.starIcon}/>
                     <Typography component="h4" variant="h4">
-                        {info.rating}
+                        {this.state.calcRating}
                     </Typography>
                 </div>
                 <div className={classes.userRating}>
@@ -138,7 +149,7 @@ class RateArea extends React.Component {
                             </Button>
                             <Button 
                                 className={classes.button} 
-                                onClick={onSubmitRating}
+                                onClick={() => {onSubmitRating(); this.calculateRating(this.state.rating)}}
                             >
                                 Save rating
                             </Button>

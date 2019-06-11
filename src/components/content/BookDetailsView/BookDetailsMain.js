@@ -160,8 +160,7 @@ const styles = theme => ({
           this.setState({
               rateAreaOpened: false, 
               alertMsg: 'Rating succesfully submitted!', 
-              notifOpened: true
-
+              notifOpened: true,
           })
       }
 
