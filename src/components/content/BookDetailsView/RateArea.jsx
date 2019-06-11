@@ -97,7 +97,7 @@ class RateArea extends React.Component {
                 </div>
                 <div className={classes.userRating}>
                     <Typography component="h6" variant="h6">
-                        Your rating:
+                        Your offer rating:
                     </Typography>
                     <div className={classes.rate}>
                         <Rating

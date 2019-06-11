@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { mainPallete } from './colors';
 import CardMedia from '@material-ui/core/CardMedia';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
+import IconButton from '@material-ui/core/IconButton';
 
 const styles = theme => ({
     media: {
@@ -36,10 +37,22 @@ const styles = theme => ({
 
 class BookCover extends React.Component {
     state = {
+        bookmarkClicked : false,
+        color: 'white',
     };
+
+    handleClick = () => {
+        this.setState({bookmarkClicked : !this.state.bookmarkClicked})
+        if(this.state.bookmarkClicked){
+            this.setState({color: 'white'})
+        }else{
+            this.setState({color: 'red'})
+        }
+    }
 
     render() {
         const { classes, image, showBookmark} = this.props;
+        console.log(showBookmark, 'show bookmark')
         return (
             <div className={classes.picture}>
             <CardMedia
@@ -48,9 +61,11 @@ class BookCover extends React.Component {
                 title="Book cover"
             >
             { showBookmark && 
-                <div>                       
-                    <BookmarkIcon className={classes.bookmarkIcon}>
+                <div>      
+                <IconButton onClick={this.handleClick}>
+                 <BookmarkIcon className={classes.bookmarkIcon} style={{color: this.state.color}}>
                     </BookmarkIcon>
+                    </IconButton>
                 </div>
             }
             </CardMedia>
