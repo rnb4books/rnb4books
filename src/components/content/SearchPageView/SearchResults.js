@@ -98,14 +98,24 @@ class SearchResults extends React.Component {
         </Typography>
         <div className={classes.results}>
             {books.map(book => 
+            {
+              let ratingSum = 0;
+              let ratingCount = 0;
+              book.opinions.forEach( opinion => {
+                ratingSum += opinion.rating; 
+                ratingCount++;
+              });
+              let rating = ratingCount !== 0 ?  ratingSum / ratingCount : 0;
                 <BookResultCard
-                  rating={book.info.rating}
-                  logo={book.bookCoverImage}
-                  title={book.info.title}
-                  subtitle={book.info.author}
-                  address={book.info.address}
-                  id={book.id}
-              />
+                rating={rating}
+                logo={book.bookCoverImage}
+                title={book.info.title}
+                subtitle={book.info.author}
+                address={book.info.address}
+                id={book.id}
+            />
+            }
+               
               )
             }
         </div>
