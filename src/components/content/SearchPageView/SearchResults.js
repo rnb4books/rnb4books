@@ -101,12 +101,13 @@ class SearchResults extends React.Component {
             {
               let ratingSum = 0;
               let ratingCount = 0;
-              book.opinions.forEach( opinion => {
-                ratingSum += opinion.rating; 
-                ratingCount++;
-              });
+              if(book.opinions )
+                book.opinions.forEach( opinion => {
+                  ratingSum += opinion.rating; 
+                  ratingCount++;
+                });
               let rating = ratingCount !== 0 ?  ratingSum / ratingCount : 0;
-                <BookResultCard
+                return <BookResultCard
                 rating={rating}
                 logo={book.bookCoverImage}
                 title={book.info.title}
