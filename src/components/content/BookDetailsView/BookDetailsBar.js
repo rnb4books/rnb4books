@@ -96,6 +96,9 @@ const styles = theme => ({
                   </div>
                   <div className={classes.descRate}>
                     <div className={classes.rating}>
+                    <Typography component="h6" variant="h6">
+                            Rating of this book:
+                        </Typography>
                       <div className={classes.ratingContent}>
                         <StarIcon   color='primary' className={classes.starIcon}/>
                         <Typography component="h4" variant="h4">

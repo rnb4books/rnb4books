@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import StarIcon from '@material-ui/icons/Star';
 import TextField from '@material-ui/core/TextField';
-import Rating from 'material-ui-rating'
+import Rating from 'react-rating'
+import Tooltip from '@material-ui/core/Tooltip';
 
 
 const styles = theme => ({
@@ -17,7 +18,8 @@ const styles = theme => ({
     }, 
     avgRating: { 
         display: 'flex', 
-        paddingBottom: '0.5%'
+        paddingBottom: '0.5%',
+        flex: 2,
     }, 
     starIcon: {
         marginRight: '1%', 
@@ -69,7 +71,7 @@ const styles = theme => ({
 class RateArea extends React.Component {
     state = {
         rating: 0,
-        comment: ''
+        comment: '',
     };
 
     onDataValueChange = (field, value) => {
@@ -81,47 +83,65 @@ class RateArea extends React.Component {
     onCancelClick = () => {
         this.setState({
             rating: this.props.initialRating.rating,
-            comment: this.props.initialRating.comment       
+            comment: this.props.initialRating.comment, 
+            currentRating: this.props.initialRating.rating,       
         });
     }
 
     calculateRating = (rating) => {
-        let newRating = parseFloat(rating) + parseFloat(this.state.calcRating);
-        let dividedRating = newRating / 2;
+        let newRating = parseFloat(rating) + parseFloat(this.props.ratingSum);
+        let dividedRating = newRating / (this.props.ratingCount + 1);
         dividedRating = dividedRating.toFixed(2);
-        this.setState({calcRating : dividedRating})
+        this.setState({calcRating : dividedRating});
+
     }
 
     componentDidMount(){
-        this.setState({calcRating : this.props.info.rating})
+        if(this.props.ratingCount)
+            this.setState({calcRating : this.props.ratingSum / this.props.ratingCount})
+    }
+
+    setRate = (rate) => {
+        document.getElementById('currentRating').innerText = rate || this.state.rating;
     }
 
     render() {
         const { classes, info, onSubmitRating } = this.props;
         return (
             <div className={classes.root}>
-                <div className={classes.avgRating}>
-                    <StarIcon  color='primary' className={classes.starIcon}/>
-                    <Typography component="h4" variant="h4">
-                        {this.state.calcRating}
-                    </Typography>
-                </div>
+                <Tooltip title={"Rating of this rent offer"} placement={'bottom-start'}>
+                    <div className={classes.avgRating}>
+                        <StarIcon  color='primary' className={classes.starIcon}/>
+                        <Typography component="h4" variant="h4">
+                            {this.state.calcRating}
+                        </Typography>
+                    </div>
+                </Tooltip>
+
                 <div className={classes.userRating}>
                     <Typography component="h6" variant="h6">
                         Your offer rating:
                     </Typography>
                     <div className={classes.rate}>
-                        <Rating
-                            value={this.state.rating}
-                            max={10}
-                            iconFilled={<StarIcon color='primary'/>}
-                            iconHovered={<StarIcon color='primary'/>}
-                            onChange={(value) => this.onDataValueChange('rating', value)}
+                    <Rating
+                        initialRating={this.state.rating}
+                        stop={10}
+                        emptySymbol={<i class="far fa-star fa-2x" color='primary'/>}
+                        fullSymbol={<i class="fas fa-star fa-2x" color='primary'/>}
+                        onHover={ this.setRate}
+                        onClick={(value) => 
+                            {
+                                this.onDataValueChange("rating", value)
+                                this.setRate(value)
+                            }
+                        }
+
                         />
                         <Typography 
                             className={classes.rateValue} 
                             component="h4" 
                             variant="h4"
+                            id="currentRating"
                         >
                             {this.state.rating}
                         </Typography>
@@ -162,12 +182,16 @@ class RateArea extends React.Component {
 }
 
 RateArea.propTypes = {
+    ratingSum: PropTypes.number,
+    ratingCount: PropTypes.number,
     initialRating: PropTypes.object,
     info: PropTypes.object, 
     onSubmitRating: PropTypes.func, 
 };
 
 RateArea.defaultProps = {
+    ratingSum: 0,
+    ratingCount: 0,
     initialRating: {
         rating: 0, 
         comment: ''

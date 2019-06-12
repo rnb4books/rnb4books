@@ -12,6 +12,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Close from '@material-ui/icons/Close';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 const styles = theme => ({
     root: {
@@ -107,11 +109,12 @@ class RentForm extends React.Component {
                                 className={classes.radios}
                                 value={rentInfo.exchangeType}
                                 onChange={(e) => onDataValueChange('exchangeType', e.target.value)}>
-
-                                <FormControlLabel 
-                                    value="droppOff" 
-                                    control={<Radio />} 
-                                    label="Drop Off" />
+                                <Tooltip title={"Renter will drop off the book for you in specified place e.g. in the café"}>
+                                    <FormControlLabel 
+                                        value="droppOff" 
+                                        control={<Radio />} 
+                                        label="Drop Off" />
+                                </Tooltip>
                                 <FormControlLabel 
                                     value="meeting" 
                                     control={<Radio />} 

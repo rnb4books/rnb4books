@@ -289,6 +289,8 @@ const styles = theme => ({
                                     initialRating={this.props.userRating}
                                     info={info}
                                     onSubmitRating= {this.onSubmitRating}
+                                    ratingSum={this.props.ratingSum}
+                                    ratingCount={this.props.ratingCount}
                                 />
                                 <div className={classes.infoPanel}>
                                     <Grid
@@ -315,9 +317,11 @@ const styles = theme => ({
   
   BookDetailsMain.propTypes = {
     classes: PropTypes.object.isRequired,
+    ratingCount: PropTypes.number, 
+    ratingSum: PropTypes.number, 
     rateDisabled: PropTypes.bool, 
     info: PropTypes.object,
-    userRating: PropTypes.object
+    userRating: PropTypes.object, 
   };
 
   BookDetailsMain.defaultProps = {
@@ -340,7 +344,9 @@ const styles = theme => ({
           publisher: '', 
           language: '', 
           bookCoverType: ''
-      }
+      }, 
+      ratingCount: 0, 
+      ratingSum: 0,
   }
   
   export default withRoot(withStyles(styles)(BookDetailsMain));

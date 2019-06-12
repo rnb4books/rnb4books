@@ -31,7 +31,7 @@ const styles = theme => ({
     };
   
     render() {
-      const { classes } = this.props;
+      const { classes, opinions } = this.props;
       return (
         <div className={classes.root}>
             <Card className={classes.card}>
@@ -40,8 +40,13 @@ const styles = theme => ({
                     titleTypographyProps={{variant:'h4'}}
                     />
                     <CardContent>
-                        <OpinionCard/>
-                        <OpinionCard/>
+                        {opinions.map(opinion => 
+                          <OpinionCard
+                            rating={opinion.rating}
+                            user={opinion.user}
+                            comment={opinion.comment}
+                          />
+                        )}
                     </CardContent>
             </Card>
         </div>
@@ -51,6 +56,12 @@ const styles = theme => ({
   
   OpinionsCard.propTypes = {
     classes: PropTypes.object.isRequired,
+    opinions: PropTypes.array, 
+  };
+
+  OpinionsCard.defaultProps = {
+    opinions: [], 
+    classes: {}
   };
   
   export default withRoot(withStyles(styles)(OpinionsCard));

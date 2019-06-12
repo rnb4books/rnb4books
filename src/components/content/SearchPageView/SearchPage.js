@@ -7,6 +7,8 @@ import SearchResults from './SearchResults'
 import {mainPallete } from '../../layout/colors';
 import {books} from '../../../static/mockData';
 import Typography from '@material-ui/core/Typography';
+import { geolocated } from "react-geolocated";
+
 
 const styles = theme => ({
   root: {
@@ -92,4 +94,10 @@ SearchPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(SearchPage));
+export default withRoot(withStyles(styles)(geolocated({
+  positionOptions: {
+      enableHighAccuracy: false,
+  },
+  userDecisionTimeout: 5000,
+})(SearchPage)));
+

@@ -13,6 +13,8 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-geolocated": "^2.5.0",
+    "react-rating": "^1.7.2",
     "react-router-dom": "^5.0.0",
     "react-scripts": "latest"
   },

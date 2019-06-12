@@ -58,6 +58,13 @@ class BookDetails extends React.Component {
   render() {
     const { classes } = this.props;
     const bookDetails = getBookById(this.props.match.params.id);
+    let ratingSum = 0;
+    let ratingCount = 0; 
+    bookDetails.opinions.forEach(opinion => {
+      ratingSum += opinion.rating;
+      ratingCount++;
+    })
+
 
     return (
       <div className={classes.root}>
@@ -72,7 +79,10 @@ class BookDetails extends React.Component {
               className={classes.mainInfo}
               rateDisabled={bookDetails.rateDisabled}
               bookCoverImage={bookDetails.bookCoverImage}
-              info={bookDetails.info}          
+              info={bookDetails.info}
+              ratingSum={ratingSum}
+              ratingCount={ratingCount}
+
           />
 
           <BookDescriptionCard/>
@@ -80,7 +90,9 @@ class BookDetails extends React.Component {
             book={bookDetails}
           ></BookDetailsBar>
 
-          <OpinionsCard/>
+          <OpinionsCard
+            opinions={bookDetails.opinions}
+            />
         </Grid>
       </div>
     );
@@ -110,7 +122,8 @@ BookDetails.defaultProps = {
         language: 'English', 
         bookCoverType: 'Paperback', 
         description: ''
-  }
+  }, 
+  opinions: []
 }
 }
 

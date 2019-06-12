@@ -53,9 +53,23 @@ const styles = theme => ({
   class OpinionCard extends React.Component {
     state = {
     };
+
+    createStars = (number) => {
+      const stars = [];
+      for(let i = 0; i < number; i++)
+      {
+        stars.push(<i class="fas fa-star" color='primary'/>);
+      }
+      for(let i = 10 - number; i >= 0; i--)
+      {
+        stars.push(<i class="far fa-star" color='primary'/>);
+      }
+      return stars;
+    }
   
     render() {
-      const { classes } = this.props;
+      const { classes, rating, comment, user } = this.props;
+      const stars = this.createStars(rating);
       return (
         <div className={classes.root}>
             <Card className={classes.card}>
@@ -65,26 +79,19 @@ const styles = theme => ({
                         <div className={classes.rating}>
                                 <div className={classes.ratingContent}>
                                 <div className={classes.stars}>
-                                    <StarIcon  color='primary'/>    
-                                    <StarIcon  color='primary'/>               
-                                    <StarIcon  color='primary'/>               
-                                    <StarIcon  color='primary'/>               
-                                    <StarIcon  color='primary'/>               
-                                    <StarIcon  color='primary'/>               
-                                    <StarIcon  color='primary'/>
-                                    <StarIcon/>
-                                    <StarIcon/>
-                                    <StarIcon/>        
+                                  {stars}
                                 </div>
                                 <Typography component="h6" variant="h6">
-                                    7
+                                    {rating}
                                 </Typography>
                                 </div>
-                                <Typography>Book in a very good state, quick and pleasant exchange.</Typography>
+                                <Typography>
+                                  {comment}
+                                </Typography>
                             </div>
                             <div className={classes.date}>
                         <Typography >06.03.2018</Typography>   
-                        <Link variant='body2' underline='always'>Kazio7878</Link>                   
+                        <Link variant='body2' underline='always'>{user}</Link>                   
                     </div>
                             </div>
                     </CardContent>
@@ -95,8 +102,18 @@ const styles = theme => ({
   }
   
   OpinionCard.propTypes = {
+    rating: PropTypes.number, 
+    comment: PropTypes.string,
+    user: PropTypes.string,
     classes: PropTypes.object.isRequired,
   };
+
+  OpinionCard.defaultProps = {
+    rating: 0,
+    comment: '',
+    user: '',
+    classes: {}, 
+  }
   
   export default withRoot(withStyles(styles)(OpinionCard));
   

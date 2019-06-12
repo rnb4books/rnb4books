@@ -5,6 +5,8 @@ import { mainPallete } from './colors';
 import CardMedia from '@material-ui/core/CardMedia';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 const styles = theme => ({
     media: {
@@ -63,9 +65,10 @@ class BookCover extends React.Component {
             { showBookmark && 
                 <div>      
                 <IconButton onClick={this.handleClick}>
-                 <BookmarkIcon className={classes.bookmarkIcon} style={{color: this.state.color}}>
-                    </BookmarkIcon>
-                    </IconButton>
+                    <Tooltip title={"Add to bookmarks list"}>
+                        <BookmarkIcon className={classes.bookmarkIcon} style={{color: this.state.color}}/>  
+                    </Tooltip>
+                </IconButton>
                 </div>
             }
             </CardMedia>

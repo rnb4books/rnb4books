@@ -7,7 +7,7 @@ export const books = [
             title: '1984',
             genre: 'Dystopia',
             author: 'George Orwell',
-            rating: '6.5',
+            rating: 9,
             address: 'Basztowa 14, Kraków', 
             renter: 'Singapurr', 
             availability: '20.06.2019', 
@@ -18,7 +18,17 @@ export const books = [
             language: 'Polish', 
             bookCoverType: 'Paperback',
             description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"
-      }
+      }, 
+      opinions: [{
+          user: 'Kazio33', 
+          comment: 'Book in a very good condition. Pleasant and quick exchange.', 
+          rating: 10,
+      }, 
+    {
+        user: 'kopp', 
+        comment: 'all very nice', 
+        rating: 9
+    }]
       }, 
        {
         id: 2,
@@ -28,7 +38,7 @@ export const books = [
             title: '1984',
             genre: 'Dystopia',
             author: 'George Orwell',
-            rating: '8.6',
+            rating: 9,
             address: 'Tokarskiego 2, Kraków', 
             renter: 'Madeline Kowalsky', 
             availability: 'Available now', 
@@ -40,7 +50,12 @@ export const books = [
             bookCoverType: 'Paperback',
             description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"
 
-      }}, 
+      },
+      opinions: [{
+        user: 'Okejka9', 
+        comment: 'Very nice book. Quick unproblematic exchange',
+        rating: 9,
+    }]}, 
      {
          id: 3,
         rateDisabled: false,
@@ -48,8 +63,8 @@ export const books = [
         info: {
             title: '1984',
             genre: 'Dystopia',
+            rating: 9,
             author: 'George Orwell',
-            rating: '8.6',
             address: 'Siemowity  23, Kraków', 
             renter: 'Penelope Maid', 
             availability: '30.08.2019', 
@@ -61,7 +76,12 @@ export const books = [
             bookCoverType: 'Paperback', 
             description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"
 
-      }}, 
+      },
+      opinions: [{
+        user: 'Darwin Pos', 
+        comment: 'Book in good condition, but contact with the owner was a bit hard.', 
+        rating: 4,
+    }]}, 
       {
         id: 4,
         rateDisabled: false,
@@ -70,7 +90,7 @@ export const books = [
             title: '1984',
             genre: 'Dystopia',
             author: 'George Orwell',
-            rating: '8.6',
+            rating: '9',
             address: 'Basztowa 16, Kraków', 
             renter: 'Charlie', 
             availability: 'Available now', 
@@ -82,7 +102,12 @@ export const books = [
             bookCoverType: 'Hard', 
             description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"
 
-      }}, 
+      },   
+    opinions: [{
+        user: 'Darwin Pos', 
+        comment: 'Book in good condition, but contact with the owner was a bit hard.', 
+        rating: 4,
+    }]},  
       {
         id: 5,
         rateDisabled: true,
@@ -91,7 +116,7 @@ export const books = [
             title: 'Hamlet',
             genre: 'Tragedy',
             author: 'William Shakespeare',
-            rating: '9',
+            rating: '9.8',
             address: 'Aleja 29 Listopada 90/15, Kraków', 
             renter: 'Singapurr', 
             availability: 'Available now', 
@@ -103,8 +128,11 @@ export const books = [
             bookCoverType: 'Paperback', 
             description: "Among Shakespeare's plays it  is considered by many his masterpiece. Among actors, the role of Hamlet, Prince of Denmark, is considered the jewel in the crown of a triumphant theatrical career. Now Kenneth Branagh plays the leading role and co-directs a brillant ensemble performance. Three generations of legendary leading actors, many of whom first assembled for the Oscar-winning film 'Henry V', gather here to perform the rarely heard complete version of the play. This clear, subtly nuanced, stunning dramatization, presented by The Renaissance Theatre Company in association with 'Bbc' Broadcasting, features such luminaries as Sir John Gielgud, Derek Jacobi, Emma Thompson and Christopher Ravenscroft. It combines a full cast with stirring music and sound effects to bring this magnificent Shakespearen classic vividly to life. Revealing new riches with each listening, this production of 'Hamlet' is an invaluable aid for students, teachers and all true lovers of Shakespeare - a recording to be treasured for decades to come."
 
-      }
-    },
+      },   opinions: [{
+        user: 'Darwin Pos', 
+        comment: 'Book in good condition, but contact with the owner was a bit hard.', 
+        rating: 4,
+    }]}, 
     {
         id: 6,
         rateDisabled: true,
