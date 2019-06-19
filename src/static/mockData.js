@@ -2,7 +2,7 @@ export const books = [
     {
         id: 1,
         rateDisabled: true,
-        bookCoverImage: '1984-4.jpg',
+        bookCoverImage: 'nophoto.jpg',
         info: {
             title: '1984',
             genre: 'Dystopia',
@@ -17,7 +17,7 @@ export const books = [
             publisher: 'Rebis', 
             language: 'Polish', 
             bookCoverType: 'Paperback',
-            description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"
+            description: "Mock description of the book. Mock description of the boook. Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook."
       }, 
       opinions: [{
           user: 'Kazio33', 
@@ -33,7 +33,7 @@ export const books = [
        {
         id: 2,
         rateDisabled: false,
-        bookCoverImage: '1984-1.jpg',
+        bookCoverImage: 'nophoto.jpg',
         info: {
             title: '1984',
             genre: 'Dystopia',
@@ -48,7 +48,7 @@ export const books = [
             publisher: 'Ullstein', 
             language: 'English', 
             bookCoverType: 'Paperback',
-            description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"
+            description: "Mock description of the book. Mock description of the boook. Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook."
 
       },
       opinions: [{
@@ -59,7 +59,7 @@ export const books = [
      {
          id: 3,
         rateDisabled: false,
-        bookCoverImage: '1984-1.jpg',
+        bookCoverImage: 'nophoto.jpg',
         info: {
             title: '1984',
             genre: 'Dystopia',
@@ -74,7 +74,7 @@ export const books = [
             publisher: 'Ullstein', 
             language: 'English', 
             bookCoverType: 'Paperback', 
-            description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"
+            description: "Mock description of the book. Mock description of the boook. Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook."
 
       },
       opinions: [{
@@ -85,7 +85,7 @@ export const books = [
       {
         id: 4,
         rateDisabled: false,
-        bookCoverImage: '1984-2.jpg',
+        bookCoverImage: 'nophoto.jpg',
         info: {
             title: '1984',
             genre: 'Dystopia',
@@ -100,7 +100,7 @@ export const books = [
             publisher: 'Rebis', 
             language: 'Polish', 
             bookCoverType: 'Hard', 
-            description: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written"
+            description: "Mock description of the book. Mock description of the boook. Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook."
 
       },   
     opinions: [{
@@ -126,7 +126,7 @@ export const books = [
             publisher: 'Rebis', 
             language: 'Polish', 
             bookCoverType: 'Paperback', 
-            description: "Among Shakespeare's plays it  is considered by many his masterpiece. Among actors, the role of Hamlet, Prince of Denmark, is considered the jewel in the crown of a triumphant theatrical career. Now Kenneth Branagh plays the leading role and co-directs a brillant ensemble performance. Three generations of legendary leading actors, many of whom first assembled for the Oscar-winning film 'Henry V', gather here to perform the rarely heard complete version of the play. This clear, subtly nuanced, stunning dramatization, presented by The Renaissance Theatre Company in association with 'Bbc' Broadcasting, features such luminaries as Sir John Gielgud, Derek Jacobi, Emma Thompson and Christopher Ravenscroft. It combines a full cast with stirring music and sound effects to bring this magnificent Shakespearen classic vividly to life. Revealing new riches with each listening, this production of 'Hamlet' is an invaluable aid for students, teachers and all true lovers of Shakespeare - a recording to be treasured for decades to come."
+            description: "Mock description of the book. Mock description of the boook. Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook."
 
       },   opinions: [{
         user: 'Darwin Pos', 
@@ -151,7 +151,7 @@ export const books = [
             publisher: 'Rebis', 
             language: 'Polish', 
             bookCoverType: 'Paperback',
-            description: "The series follows an elite mercenary unit, The Black Company, last of the Free Companies of Khatovar, through roughly forty years of its approximately four-hundred-year history. Cook mixes fantasy with military fiction in gritty, down-to-earth portrayals of the Company's chief personalities and its struggles.The main chronology spans nine novels, which can be grouped into three sections: The Books of the North recount the Company's dealings with the Empire of Lady; The Books of the South follow the Company on its journey back to its beginnings in Khatovar; Glittering Stone sees the Company achieve victory over its employer's enemies, and move on to its destiny. Additionally, there is one spin-off novel, The Silver Spike, which follows events concerning former members of the Company and one of its adversaries."
+            description: "Mock description of the book. Mock description of the boook. Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook.Mock description of the boook."
       }
     }
 ]

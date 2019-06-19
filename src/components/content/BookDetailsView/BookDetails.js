@@ -107,7 +107,7 @@ BookDetails.propTypes = {
 BookDetails.defaultProps = {
   bookDetails: {
     rateDisabled: true,
-    bookCoverImage: '1984-1.jpg',
+    bookCoverImage: 'nophoto.jpg',
     info: {
         title: '1984', 
         author: 'George Orwell',

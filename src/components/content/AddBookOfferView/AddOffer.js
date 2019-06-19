@@ -33,7 +33,7 @@ class AddOfferPage extends React.Component {
     render() {
         const {classes} = this.props;
         const bookDetails = {
-            bookCoverImage: '1984-4.jpg',
+            bookCoverImage: 'nophoto.jpg',
             info: {
                 title: '1984',
                 author: 'George Orwell',
